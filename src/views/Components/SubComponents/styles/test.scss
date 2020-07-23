@@ -1,0 +1,107 @@
+// .aws-sld {
+//     &__content {
+//       p {
+//         transform: translate3d(0, 0, 0);
+//         opacity: 1;
+//         transition: transform 0.45s cubic-bezier(0.15, 0.3, 0.15, 1), opacity 0.35s ease-out;
+//       }
+//       p:nth-child(2) {
+//         transition-delay: 0.05s, 0.05s;
+//       }
+//       &--exit {
+//         p {
+//           transition: transform 0.225s cubic-bezier(0.85, 0, 0.85, 0.7), opacity 0.4s ease-out;
+//         }
+//         p:nth-child(2) {
+//           transition-delay: 0.05s, 0.05s;
+//         }
+//       }
+//       &--moveLeft {
+//         p {
+//           transform: translate3d(-50px, 0, 0);
+//           opacity: 0;
+//         }
+//       }
+//       &--moveRight {
+//         p {
+//           transform: translate3d(50px, 0, 0);
+//           opacity: 0;
+//         }
+//       }
+//     }
+//   }
+.slider{
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
+    height: 40vw;
+    position: relative;
+    overflow: hidden;
+    
+    &__slide{
+      transition: all .4s ease-in-out;
+      transform: scale(1.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40vw;
+      max-height: 600px;
+      min-height: 200px;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      opacity: 0;
+      
+      &__text{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0,0,0,.6);
+        
+        a, a:link{
+          transition: all .3s ease-in-out;
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 32px;
+          padding: 20px;
+          display: block;
+          
+          &:hover{
+            background: rgba(20,20,20,.4);
+            color: rgb(200,200,200);
+          }
+  
+        }
+      }
+      
+      &[data-active="true"]{
+        transform: scale(1);
+        z-index: 100;
+        opacity: 1;
+      }
+    }
+    
+    
+    &__next, &__previous{
+      transition: all .3s ease-in-out;
+      color: rgba(255,255,255,.6);
+      z-index: 200;
+      position: absolute;
+      
+      &:hover{
+        color: rgba(255,255,255,.8);
+        transform: scale(1.1);
+      }
+    }
+    
+    &__next{
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    &__previous{
+      bottom: 20px;
+      left: 20px;
+    }
+  }
