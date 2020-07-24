@@ -18,7 +18,7 @@ import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
-
+import Loader from 'components/Backdrop/Loader.js';
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 
 import image from "assets/img/bg7.jpg";
@@ -26,12 +26,20 @@ import image from "assets/img/bg7.jpg";
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
+  const [open, setOpen] = React.useState(true);
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
   const { ...rest } = props;
+
+  React.useEffect(() => {
+    setTimeout(() => {
+        setOpen(false);
+    }, [1500])
+  }, [])
+
   return (
     <div>
       <Header
@@ -50,6 +58,7 @@ export default function LoginPage(props) {
         }}
       >
         <div className={classes.container}>
+        <Loader open={open} />
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
@@ -86,7 +95,6 @@ export default function LoginPage(props) {
                       </Button>
                     </div>
                   </CardHeader>
-                  <p className={classes.divider}>Or Be Classical</p>
                   <CardBody>
                     <CustomInput
                       labelText="First Name..."

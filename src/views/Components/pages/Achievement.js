@@ -13,6 +13,7 @@ import HotelIcon from '@material-ui/icons/Hotel';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Loader from 'components/Backdrop/Loader.js';
 
 import BackgroundHeader from '../SubComponents/components/BackgroundHeader';
 import Footer from '../SubComponents/components/Footer';
@@ -23,9 +24,17 @@ import "animate.css/animate.min.css";
 
 export default function Achievements() {
     const classes = useStyles();
+    const [open, setOpen] = React.useState(true);
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            setOpen(false);
+        }, [1500])
+    }, [])
 
     return (
         <>
+        <Loader open={open} />
         <BackgroundHeader data={'Achievments'}/>
             <div className="content pb-5">
                 <div className="mt-5">

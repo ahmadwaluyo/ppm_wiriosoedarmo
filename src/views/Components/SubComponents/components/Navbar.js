@@ -48,14 +48,14 @@ export default function Navbar () {
               </div>
               <div className="dropdown" href="#news">Service Online <FaCaretDown style={{ paddingLeft: 5 }} size={25} />
                 <div className="dropdown-content">
-                  <Link to="/pendaftaran">Pendaftaran</Link>
-                  <Link to="/pendaftaran">Info Pembayaran</Link>
-                  <Link to="/perijinanputri">Perijinan Putri</Link>
-                  <Link to="/perijinanputra">Perijinan Putra</Link>
-                  <Link to="/login">Login</Link>
+                  <Link to="/">Pendaftaran</Link>
+                  <Link to="/">Info Pembayaran</Link>
+                  <Link to="/">Perijinan Putri</Link>
+                  <Link to="/">Perijinan Putra</Link>
+                  <Link to="/login-page">Login</Link>
                 </div>
               </div>
-              <Link to="/articles">Article</Link>
+              <Link to="/landing-page">Article</Link>
               <Link to="/galery">Galery</Link>
               <Link className="icon" onClick={myFunction}>
                   <i className="fa fa-bars"></i>

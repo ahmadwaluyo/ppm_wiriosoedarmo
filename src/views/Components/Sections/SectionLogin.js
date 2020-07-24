@@ -65,7 +65,6 @@ export default function SectionLogin() {
                     </Button>
                   </div>
                 </CardHeader>
-                <p className={classes.divider}>Or Be Classical</p>
                 <CardBody>
                   <CustomInput
                     labelText="First Name..."

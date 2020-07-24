@@ -22,15 +22,27 @@ import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
 
+//loader
+import Loader from 'components/Backdrop/Loader.js';
+
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
+  const [open, setOpen] = React.useState(true);
   const classes = useStyles();
   const { ...rest } = props;
+
+  React.useEffect(() => {
+    setTimeout(() => {
+        setOpen(false);
+    }, [1500])
+  }, [])
+
   return (
     <div>
+      <Loader open={open} />
       <Header
         color="transparent"
         routes={dashboardRoutes}
@@ -58,7 +70,7 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
+                href="https://www.youtube.com/channel/UCMuxxsGqi1x9H3CxRC0OAcg"
                 target="_blank"
                 rel="noopener noreferrer"
               >

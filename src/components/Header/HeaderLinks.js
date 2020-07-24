@@ -73,18 +73,16 @@ export default function HeaderLinks(props) {
               <Link to="/" className={classes.dropdownLink}>
                 Kalender Akademik
               </Link>,
+              <Link to="/login-page" className={classes.dropdownLink}>
+                Login
+              </Link>
             ]}
           />
       </ListItem>
       <ListItem className={classes.listItem}>
-          <Button
-            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-            color="transparent"
-            target="_blank"
-            className={classes.navLink}
-          >
-          <Description className={classes.icons} /> Article
-          </Button>
+          <Link to="/landing-page" className={classes.navLink} color="transparent">
+            <Description className={classes.icons} /> Article
+          </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
           <Button

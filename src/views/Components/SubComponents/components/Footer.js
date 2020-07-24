@@ -10,19 +10,26 @@ export default function Footer() {
         var header = $('.scroll');
         $(window).scroll(function() {
            var scroll = $(window).scrollTop();
-           if (scroll < header.height()) {
-             header.fadeOut("slow");
-           } else {
-             header.fadeIn("slow");
+           if (scroll > header.height()) {
+               header.fadeIn("slow");
+            } else {
+               header.fadeOut("slow");
            }
         });
+    });
+
+    $('.scrollup').click(function (){
+        $("html,body").animate({
+        scrollTop: 0
+        }, 800);
+        return false;
     });
 
     return (
         <div className="footer-background">
             <Map />
             <a href="#top" className="scroll">
-                <FaAngleUp size={20} />
+                <FaAngleUp className="scrollup" size={20} />
             </a>
             <div className="footer-copyright text-center py-3 d-flex justify-content-center align-items-center pb-5"> 
                 <span>Copyright 2020 ©
