@@ -21,36 +21,33 @@ export default function SectionBasics() {
       <div className={classes.container}>
         <div className={classes.title}>
           <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration=".5">
-            <h2 className={classes2.titleNews}>Last News</h2>
+            <div className={classes2.titleNews}>Last News</div>
             <hr className={classes.hr} />
           </ScrollAnimation>
         </div>
         <div class="row mt-5">
               <div class="col-xs-12 col-md-6 col-lg-3">
-              <ScrollAnimation animateIn="fadeInUp" animateOnce="true" duration="1">
-                  <Card>
-                  <CardActionArea>
-                      <CardMedia
-                      className={classes2.media}
-                      image="https://kuliahditurki.com/wp-content/uploads/2018/06/universitas-selcuk-turki.jpg"
-                      title="Contemplative Reptile"
-                      />
-                      <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                          Lizard
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                          Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                          across all continents except Antarctica
-                      </Typography>
-                      </CardContent>
-                  </CardActionArea>
-                  </Card>
-              </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUp" animateOnce="true" duration="1">
+                    <CardActionArea>
+                        <CardMedia
+                        className={classes2.media}
+                        image="https://kuliahditurki.com/wp-content/uploads/2018/06/universitas-selcuk-turki.jpg"
+                        title="Contemplative Reptile"
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            Lizard
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                            across all continents except Antarctica
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </ScrollAnimation>
               </div>
               <div class="col-xs-12 col-md-6 col-lg-3">
                   <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1.5">
-                  <Card>
                   <CardActionArea>
                       <CardMedia
                       className={classes2.media}
@@ -67,13 +64,11 @@ export default function SectionBasics() {
                       </Typography>
                       </CardContent>
                   </CardActionArea>
-                  </Card>
               </ScrollAnimation>
               </div>
               <div class="clearfix hidden-sm-down hidden-lg-up"></div>
               <div class="col-xs-12 col-md-6 col-lg-3">
                   <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="2">
-                  <Card>
                   <CardActionArea>
                       <CardMedia
                       className={classes2.media}
@@ -90,12 +85,10 @@ export default function SectionBasics() {
                       </Typography>
                       </CardContent>
                   </CardActionArea>
-                  </Card>
               </ScrollAnimation>
               </div>
               <div class="col-xs-12 col-md-6 col-lg-3">
                   <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="2.5">
-                  <Card>
                   <CardActionArea>
                       <CardMedia
                       className={classes2.media}
@@ -112,7 +105,6 @@ export default function SectionBasics() {
                       </Typography>
                       </CardContent>
                   </CardActionArea>
-                  </Card>
               </ScrollAnimation>
               </div>
           </div>

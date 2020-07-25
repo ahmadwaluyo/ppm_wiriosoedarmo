@@ -3,7 +3,8 @@ import customCheckboxRadioSwitch from "assets/jss/material-kit-react/customCheck
 
 const basicsStyle = {
   sections: {
-    padding: "120px 0"
+    height: "100vh",
+    paddingTop: "100px"
   },
   container,
   title: {

@@ -91,7 +91,7 @@ export default function ProfilePage(props) {
               </p>
             </div>
             <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
+              <GridItem xs={12} sm={12} md={12} className={classes.navWrapper}>
                 <NavPills
                   alignCenter
                   color="primary"
