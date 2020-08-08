@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
+// import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
 import { Info, Home, LaptopMac, PhotoLibrary, Description } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import Button from "components/CustomButtons/Button.js";
+// import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 
@@ -64,7 +64,7 @@ export default function HeaderLinks(props) {
             }}
             buttonIcon={LaptopMac}
             dropdownList={[
-              <Link to="/" className={classes.dropdownLink}>
+              <Link to="/admission" className={classes.dropdownLink}>
                 Pendaftaran
               </Link>,
               <Link to="/" className={classes.dropdownLink}>
@@ -85,14 +85,12 @@ export default function HeaderLinks(props) {
           </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
-          <Button
-            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-            color="transparent"
-            target="_blank"
+          <Link
+            to="/profile-page"
             className={classes.navLink}
           >
           <PhotoLibrary className={classes.icons} /> Galery
-          </Button>
+          </Link>
       </ListItem>
     </List>
   );

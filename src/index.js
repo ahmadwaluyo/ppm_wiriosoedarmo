@@ -9,7 +9,6 @@ import "assets/scss/material-kit-react.scss?v=1.9.0";
 import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
-import LoginPage from "views/LoginPage/LoginPage.js";
 
 //tentang kami
 import Fasilitas from 'views/Components/TentangKami/Fasilitas';
@@ -18,6 +17,9 @@ import VisiMisi from './views/Components/TentangKami/VisiMisi';
 import Sambutan from './views/Components/TentangKami/SambutanPembina';
 import Achievments from './views/Components/pages/Achievement';
 
+//service online
+import LoginPage from "views/LoginPage/LoginPage.js";
+import Admission from "./views/Components/ServiceOnline/Pendaftaran";
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -31,6 +33,7 @@ ReactDOM.render(
       <Route path="/visimisi" component={VisiMisi} />
       <Route path="/sambutan" component={Sambutan} />
       <Route path="/achievments" component={Achievments} />
+      <Route path="/admission" component={Admission} />
       <Route path="/" component={Components} />
     </Switch>
   </Router>,

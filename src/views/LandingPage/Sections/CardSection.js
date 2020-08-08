@@ -3,14 +3,13 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 // @material-ui/icons
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Chat from '@material-ui/icons/Chat';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShareIcon from '@material-ui/icons/Share';
+// import MoreVertIcon from '@material-ui/icons/MoreVert';
+// import Chat from '@material-ui/icons/Chat';
 
 // core components
-import { Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography } from '@material-ui/core';
-import { red } from '@material-ui/core/colors';
+import { Card, CardHeader, CardMedia, CardContent, Avatar, Typography } from '@material-ui/core';
 
 import { title } from "assets/jss/material-kit-react.js";
 

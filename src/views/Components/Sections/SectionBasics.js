@@ -1,7 +1,6 @@
 import React from "react";
 // card plugin
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@material-ui/core';
-
+import { CardActionArea, CardContent, CardMedia } from "@material-ui/core";
 //animation
 import ScrollAnimation from 'react-animate-on-scroll';
 import "animate.css/animate.min.css";
@@ -26,7 +25,7 @@ export default function SectionBasics() {
           </ScrollAnimation>
         </div>
         <div class="row mt-5">
-              <div class="col-xs-12 col-md-6 col-lg-3">
+              <div class="col-xs-12 col-md-3 col-lg-3">
                 <ScrollAnimation animateIn="fadeInUp" animateOnce="true" duration="1">
                     <CardActionArea>
                         <CardMedia
@@ -35,18 +34,18 @@ export default function SectionBasics() {
                         title="Contemplative Reptile"
                         />
                         <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Lizard
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
-                        </Typography>
+                        <div className={classes2.containerInfo}>
+                            Test
+                        </div>
+                        <br />
+                        <div className={classes2.info}>
+                            Kurban Idul Adha sebagai bentuk keimanan
+                        </div>
                         </CardContent>
                     </CardActionArea>
                 </ScrollAnimation>
               </div>
-              <div class="col-xs-12 col-md-6 col-lg-3">
+              <div class="col-xs-12 col-md-3 col-lg-3">
                   <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1.5">
                   <CardActionArea>
                       <CardMedia
@@ -55,19 +54,19 @@ export default function SectionBasics() {
                       title="Contemplative Reptile"
                       />
                       <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                          Lizard
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                          Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                          across all continents except Antarctica
-                      </Typography>
+                      <div className={classes2.containerInfo}>
+                          Test
+                      </div>
+                      <br />
+                      <div className={classes2.info}>
+                          King Abdul Aziz University sedang membuka beasiswa pelajar
+                      </div>
                       </CardContent>
                   </CardActionArea>
               </ScrollAnimation>
               </div>
               <div class="clearfix hidden-sm-down hidden-lg-up"></div>
-              <div class="col-xs-12 col-md-6 col-lg-3">
+              <div class="col-xs-12 col-md-3 col-lg-3">
                   <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="2">
                   <CardActionArea>
                       <CardMedia
@@ -76,18 +75,18 @@ export default function SectionBasics() {
                       title="Contemplative Reptile"
                       />
                       <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                          Lizard
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                          Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                          across all continents except Antarctica
-                      </Typography>
+                      <div className={classes2.containerInfo}>
+                          Test
+                      </div>
+                      <br />
+                      <div className={classes2.info}>
+                          Yuk Ketahui cara aman menangkal virus
+                      </div>
                       </CardContent>
                   </CardActionArea>
               </ScrollAnimation>
               </div>
-              <div class="col-xs-12 col-md-6 col-lg-3">
+              <div class="col-xs-12 col-md-3 col-lg-3">
                   <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="2.5">
                   <CardActionArea>
                       <CardMedia
@@ -96,13 +95,13 @@ export default function SectionBasics() {
                       title="Contemplative Reptile"
                       />
                       <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                          Lizard
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                          Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                          across all continents except Antarctica
-                      </Typography>
+                      <div className={classes2.containerInfo}>
+                          Test
+                      </div>
+                      <br />
+                      <div className={classes2.info}>
+                          Pengangguran semakin meningkat
+                      </div>
                       </CardContent>
                   </CardActionArea>
               </ScrollAnimation>
@@ -121,9 +120,32 @@ const useStyles2 = makeStyles((theme) => ({
     height: 180,
   },
   titleNews: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     fontSize: 40,
-    fontWeight: 'bold'
+    fontWeight: "bold"
+  },
+  containerInfo: {
+    width: "100%",
+    padding: 3,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#ffb942",
+    marginTop: "-30px",
+    textTransform: "uppercase",
+    color: "#FFFFFF",
+    fontSize: "15px",
+    fontFamily: "Roboto",
+    lineHeight: "30px",
+    fontWeight: 700
+  },
+  info: {
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: 700,
+    fontFamily: "Roboto Slab",
+
   }
 }));

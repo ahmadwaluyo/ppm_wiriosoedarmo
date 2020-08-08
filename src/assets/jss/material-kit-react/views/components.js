@@ -1,4 +1,4 @@
-import { container } from "assets/jss/material-kit-react.js";
+// import { container } from "assets/jss/material-kit-react.js";
 
 const componentsStyle = {
   container: {
@@ -14,6 +14,9 @@ const componentsStyle = {
     flexDirection: "column",
     background: "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )",
     padding: 20,
+    "&:@media only screen and (max-width: 582px)" : {
+      fontSize: 10
+    }
   },
   linkBrand: {
     color: "#FFFFFF",
@@ -47,7 +50,7 @@ const componentsStyle = {
   linkTitle: {
     fontSize: "1.413rem",
     fontWeight: "700",
-    fontSize: "24px",
+    // fontSize: "24px",
     fontFamily: "Roboto Slab",
     lineHeight: "30px",
     textTransform: "uppercase",

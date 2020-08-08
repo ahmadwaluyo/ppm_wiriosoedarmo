@@ -141,15 +141,15 @@ const buttonStyle = {
     }
   },
   twitter: {
-    backgroundColor: "#55acee",
+    backgroundColor: "#4AC959",
     color: "#fff",
     boxShadow:
-      "0 2px 2px 0 rgba(85, 172, 238, 0.14), 0 3px 1px -2px rgba(85, 172, 238, 0.2), 0 1px 5px 0 rgba(85, 172, 238, 0.12)",
+      "0 2px 2px 0 rgba(rgba(37,211,102 ,0.14)), 0 3px 1px -2px rgba(37,211,102, 0.2), 0 1px 5px 0 rgba(37,211,102, 0.12)",
     "&:hover,&:focus,&:visited": {
-      backgroundColor: "#55acee",
+      backgroundColor: "#4AC959",
       color: "#fff",
       boxShadow:
-        "0 14px 26px -12px rgba(85, 172, 238, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(85, 172, 238, 0.2)"
+        "0 14px 26px -12px rgba(37,211,102, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(37,211,102, 0.2)"
     }
   },
   facebook: {
@@ -176,13 +176,13 @@ const buttonStyle = {
         "0 14px 26px -12px rgba(221, 75, 57, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(221, 75, 57, 0.2)"
     }
   },
-  github: {
-    backgroundColor: "#333333",
+  instagram: {
+    background: "linear-gradient(#405DE6,#5851DB,#833AB4,#C13584,#E1306C,#FD1D1D,#F56040,#F77737,#FCAF45,#FFDC80)",
     color: "#fff",
     boxShadow:
       "0 2px 2px 0 rgba(51, 51, 51, 0.14), 0 3px 1px -2px rgba(51, 51, 51, 0.2), 0 1px 5px 0 rgba(51, 51, 51, 0.12)",
     "&:hover,&:focus": {
-      backgroundColor: "#333333",
+      background: "linear-gradient(#405DE6,#5851DB,#833AB4,#C13584,#E1306C,#FD1D1D,#F56040,#F77737,#FCAF45,#FFDC80)",
       color: "#fff",
       boxShadow:
         "0 14px 26px -12px rgba(51, 51, 51, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(51, 51, 51, 0.2)"

@@ -36,7 +36,7 @@ export default function SectionCarousel () {
 		<Slider className="slider-wrapper">
 			{content.map((item, index) => (
 				<div
-          key={index}
+          			key={index}
 					className="slider-content"
 					style={{ background: `url('${item.image}') no-repeat center center` }}
 				>

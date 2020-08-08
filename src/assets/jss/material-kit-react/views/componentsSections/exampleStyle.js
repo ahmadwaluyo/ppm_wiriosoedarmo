@@ -8,7 +8,7 @@ const exampleStyle = {
   },
   container: {
     ...containerFluid,
-    textAlign: "center !important"
+    textAlign: "center !important",
   },
   ...imagesStyle,
   link: {

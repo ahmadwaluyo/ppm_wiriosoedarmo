@@ -4,40 +4,29 @@ import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 const teamStyle = {
   section: {
     padding: "70px 0",
-    textAlign: "center"
+    textAlign: "center",
+    // background: "linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_dsc_2730.jpg?alt=media&token=eec69b13-8564-49ee-bfaf-1feffac26383')",
   },
   title: {
     ...title,
-    marginBottom: "1rem",
-    marginTop: "30px",
+    marginBottom: "4rem",
     minHeight: "32px",
-    textDecoration: "none"
+    textDecoration: "none",
+    // color: "#FFFFFF"
   },
   ...imagesStyle,
   itemGrid: {
-    marginLeft: "auto",
-    marginRight: "auto"
+    margin: "40px auto 20px auto"
   },
   cardTitle,
   smallTitle: {
     color: "#6c757d"
   },
   description: {
-    color: "#999"
+    color: "#333"
   },
   justifyCenter: {
     justifyContent: "center !important"
-  },
-  socials: {
-    marginTop: "0",
-    width: "100%",
-    transform: "none",
-    left: "0",
-    top: "0",
-    height: "100%",
-    lineHeight: "41px",
-    fontSize: "20px",
-    color: "#999"
   },
   margin5: {
     margin: "5px"

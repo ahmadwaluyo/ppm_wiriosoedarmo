@@ -6,17 +6,24 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 // material-ui core components
 import { List, ListItem } from "@material-ui/core";
+import Button from "components/CustomButtons/Button.js";
+import GridContainer from "components/Grid/GridContainer.js";
+
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
 
 import styles from "assets/jss/material-kit-react/components/footerStyle.js";
+import styles2 from "assets/jss/material-kit-react/views/componentsSections/downloadStyle.js";
 
 const useStyles = makeStyles(styles);
+const useStyles2 = makeStyles(styles2);
 
 export default function Footer(props) {
   const classes = useStyles();
+  const classes2 = useStyles();
+
   const { whiteFont } = props;
   const footerClasses = classNames({
     [classes.footer]: true,
@@ -26,6 +33,7 @@ export default function Footer(props) {
     [classes.a]: true,
     [classes.footerWhiteFont]: whiteFont
   });
+
   return (
     <footer className={footerClasses}>
       <div className={classes.container}>
@@ -79,6 +87,25 @@ export default function Footer(props) {
           >
             PPM Wiriosoedarmo
           </a>
+        </div>
+        <div className={classes.center}>
+          <div className={classes2.textCenter + " " + classes2.sharingArea}>
+            <GridContainer justify="center">
+              <h3>Thank you for visiting us!</h3>
+            </GridContainer>
+            <Button color="twitter">
+              <i className={classes2.socials + " fab fa-whatsapp"} />
+            </Button>
+            <Button color="facebook">
+              <i className={classes2.socials + " fab fa-facebook-square"} />
+            </Button>
+            <Button color="google">
+              <i className={classes2.socials + " fab fa-youtube"} />
+            </Button>
+            <Button color="instagram">
+              <i className={classes2.socials + " fab fa-instagram"} />
+            </Button>
+          </div>
         </div>
       </div>
     </footer>

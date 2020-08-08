@@ -7,18 +7,86 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
+// import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
+// import Button from "components/CustomButtons/Button.js";
+// import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+// import CardFooter from "components/Card/CardFooter.js";
+import CardHeader from "components/Card/CardHeader.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
+import Slider from "react-slick";
+// import { Container, Card, Row, Col } from "react-bootstrap";
+import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
 
-import team1 from "assets/img/faces/avatar.jpg";
+// import team1 from "assets/img/faces/avatar.jpg";
 import team2 from "assets/img/faces/christian.jpg";
 import team3 from "assets/img/faces/kendall.jpg";
+import team4 from "assets/img/faces/card-profile1-square.jpg";
+import team5 from "assets/img/faces/card-profile2-square.jpg";
+import team6 from "assets/img/faces/card-profile4-square.jpg";
+import team7 from "assets/img/faces/card-profile5-square.jpg";
+
+const teams = [
+  {
+    "id": 1,
+    "name": "Siti Maesaroh",
+    "img": team6,
+    "title": "Wali santri",
+    "quotes": "PPM Wiriosoedarmo merupakan pesantren Muhammadiyah pertama di Kebumen. Dan saya sangat antusias menyekolahkan anak saya disana"
+  },
+  {
+    "id": 2,
+    "name": "Ali Zaenal Abidin",
+    "img": team2,
+    "title": "Wali santri",
+    "quotes": "PPM Wiriosoedarmo menerapkan konsep modernitas tanpa mengesampingkan pembentukan karakter santri"
+  },
+  {
+    "id": 3,
+    "name": "Ridwan",
+    "img": team4,
+    "title": "Santri SMP PPM Wiriosoedarmo",
+    "quotes": "Dengan adanya program dhaurah saya yang tadinya belum hafal Al Quran sudah hafal 15 Jus hanya dalam waktu 1 tahun"
+  },
+  {
+    "id": 4,
+    "name": "Fina Listiani",
+    "img": team7,
+    "title": "Santri SMA PPM Wiriosoedarmo",
+    "quotes": "PPM Wiriosoedarmo bekerjasama dengan kampus-kampus di dalam dan luar negeri. Ini sangat membantu terutama saya yang sudah kelas 12 SMA"
+  },
+  {
+    "id": 5,
+    "name": "Khoerudin Umar",
+    "img": team5,
+    "title": "Santri SMA PPM Wiriosoedarmo",
+    "quotes": "Dengan adanya program mudhofir (senior), kami dapat belajar tentang kepemimpinan dan memberikan beban tanggungjawab kepada kami untuk mencontohkan perilaku yang baik kepada santri-santri baru"
+  },
+  {
+    "id": 6,
+    "name": "Heri Pramono",
+    "img": team5,
+    "title": "Mudhir PPM Wiriosoedarmo",
+    "quotes": "Pendidikan karakter yang berlandaskan prinsip-prinsip dasar ke muhammadiyahan menjadi pokok ajaran yang kami terapkan di PPM Wiriosoedarmo"
+  },
+  {
+    "id": 7,
+    "name": "Fina Listiani",
+    "img": team3,
+    "title": "Ketua PCM Gombong",
+    "quotes": "PPM Wiriosoedarmo dibangun untuk memenuhi kebutuhan akan pendidikan moral dan karakter pada generasi muda saat ini yang mengalami kecenderungan menurun"
+  },
+  {
+    "id": 8,
+    "name": "Widiantoro Triatmadji",
+    "img": team4,
+    "title": "Santri SMA PPM Wiriosoedarmo",
+    "quotes": "PPM Wiriosoedarmo bekerjasama dengan kampus-kampus di dalam dan luar negeri. Ini sangat membantu terutama saya yang sudah kelas 12 SMA"
+  }
+]
 
 const useStyles = makeStyles(styles);
 
@@ -29,135 +97,43 @@ export default function TeamSection() {
     classes.imgRoundedCircle,
     classes.imgFluid
   );
+
   return (
     <div className={classes.section}>
       <h2 className={classes.title}>Testimoni</h2>
-      <div>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={4}>
-            <Card plain>
+        <Slider 
+        dots={false}
+        infinite={true}
+        speed={2000}
+        slidesToShow={3}
+        slidesToScroll={1}
+        autoplay={true}
+        autoplaySpeed={3500}
+        draggable={true}
+        >
+          {
+            teams.map(el => 
+            <GridItem xs={12} sm={12} md={12} key={el.id}>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team1} alt="..." className={imageClasses} />
+                <img src={el.img} alt="..." className={imageClasses} />
               </GridItem>
-              <h4 className={classes.cardTitle}>
-                Gigi Hadid
-                <br />
-                <small className={classes.smallTitle}>Model</small>
-              </h4>
-              <CardBody>
-                <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
-                </p>
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-twitter"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-facebook"} />
-                </Button>
-              </CardFooter>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-            <Card plain>
-              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team2} alt="..." className={imageClasses} />
+                  <CardHeader>
+                  <h3 className={classes.cardTitle}>
+                    {el.name}
+                    <h4 className={classes.smallTitle}><small>{el.title}</small></h4>
+                  </h3>
+                  <CardBody>
+                    <h4 className={classes.description}>
+                      <i>
+                      "{el.quotes}"
+                      </i>
+                    </h4>
+                  </CardBody>
+                  </CardHeader>
               </GridItem>
-              <h4 className={classes.cardTitle}>
-                Christian Louboutin
-                <br />
-                <small className={classes.smallTitle}>Designer</small>
-              </h4>
-              <CardBody>
-                <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
-                </p>
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-twitter"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-linkedin"} />
-                </Button>
-              </CardFooter>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-            <Card plain>
-              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team3} alt="..." className={imageClasses} />
-              </GridItem>
-              <h4 className={classes.cardTitle}>
-                Kendall Jenner
-                <br />
-                <small className={classes.smallTitle}>Model</small>
-              </h4>
-              <CardBody>
-                <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
-                </p>
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-twitter"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-facebook"} />
-                </Button>
-              </CardFooter>
-            </Card>
-          </GridItem>
-        </GridContainer>
-      </div>
+            )
+          }
+        </Slider>
     </div>
   );
 }

@@ -14,6 +14,7 @@ const profilePageStyle = {
     }
   },
   description: {
+    paddingTop: 20,
     margin: "1.071rem auto 0",
     maxWidth: "600px",
     color: "#999",
