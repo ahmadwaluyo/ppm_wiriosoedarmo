@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import * as $ from "jquery";
 // @material-ui/icons
 // core components
 import Header from "components/Header/Header.js";
@@ -31,6 +32,7 @@ import Loader from 'components/Backdrop/Loader.js';
 import TextTransition, { presets } from "react-text-transition";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
+
 //responsive
 import { useMediaPredicate } from "react-media-hook";
 
@@ -46,19 +48,27 @@ const HeaderText = [
 const SubHeaderText = [
   `di Pondok Pesantren Modern Wiriosoedarmo Muhammadiyah Gombong`,
   `"Qiroatul Kutub (lancar membaca turats/kitab kuning)"`,
-  `"Tahfidz Al Quran minimal 6 Juz (SMP target minimal 1 tahun 1 Juz, SMA minimal 1 tahun 2 Juz)"`,
+  `"Tahfidz Al Quran minimal 6 Juz"`,
   `"Al Lughoh Al Yaumiyyah (Mahir bahasa Arab dan bahasa inggris)"`,
   `"Al 'ulum Asy syar'iyyah"`
 ]
 
 export default function Components(props) {
   const [open, setOpen] = React.useState(true);
+  // var [nextImage, setNextImage] = React.useState(0);
+  var nextImage = 0;
   const [index, setIndex] = React.useState(0);
   const biggerThan400 = useMediaPredicate("(min-width: 480px)");
   const smallerThan400 = useMediaPredicate("(max-width: 480px)");
   const classes = useStyles();
   const { ...rest } = props;
-  const imgBackground = new URL("https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_background-header.jpg?alt=media&token=f356647b-db18-45eb-855e-88ec438c0520");
+  const imgBackground = 
+  new Array(
+  "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_background-header.jpg?alt=media&token=f356647b-db18-45eb-855e-88ec438c0520",
+  "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/1.jpg?alt=media&token=0e390fb0-2403-431a-b245-bf1261e1be6d",
+  "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_2backgroundheader.jpg?alt=media&token=73b53602-e71e-4cc1-b7fe-4a815123ad67",
+  "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_background-header.jpg?alt=media&token=f356647b-db18-45eb-855e-88ec438c0520",
+  "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_dsc_2730.jpg?alt=media&token=eec69b13-8564-49ee-bfaf-1feffac26383");
   
   React.useEffect(() => {
     setTimeout(() => {
@@ -72,6 +82,7 @@ export default function Components(props) {
       4000
     );
   }, []);
+
 
   return (
     <div>
@@ -88,7 +99,7 @@ export default function Components(props) {
         }}
         {...rest}
       />
-      <Parallax image={imgBackground}>
+      <Parallax image={imgBackground[0]}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
@@ -163,7 +174,7 @@ export default function Components(props) {
                         </div>
                       </div>
                     </div>
-                    <Link to={"/login-page"} className={classes.link}>
+                    <Link to={"/admission"} className={classes.link}>
                       <Button size="lg" className={classes.btnLink} simple>
                         View More
                       </Button>
@@ -216,7 +227,7 @@ export default function Components(props) {
                         </div>
                       </div>
                     </div>
-                    <Link to={"/login-page"} className={classes.link}>
+                    <Link to={"/admission"} className={classes.link}>
                       <Button size="lg" className={classes.btnLink} simple>
                         View More
                       </Button>
@@ -231,7 +242,7 @@ export default function Components(props) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <SectionNews />
-        <SectionCarousel />
+        <SectionCarousel props={props} />
         {/* <SectionTabs /> */}
         <SectionPills />
         {/* <SectionNotifications /> */}

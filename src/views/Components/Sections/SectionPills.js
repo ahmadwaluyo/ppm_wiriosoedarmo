@@ -144,7 +144,7 @@ export default function SectionPills() {
                         >
                           <ListItem button>
                             <ListItemIcon>
-                              <LabelImportant />
+                              <LabelImportant style={{ color: "#FFFFFF"}} />
                             </ListItemIcon>
                             <ListItemText primary={`${el}`} />
                           </ListItem>

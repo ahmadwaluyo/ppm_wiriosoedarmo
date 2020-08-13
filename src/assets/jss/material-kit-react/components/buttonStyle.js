@@ -140,7 +140,7 @@ const buttonStyle = {
       color: grayColor
     }
   },
-  twitter: {
+  whatsapp: {
     backgroundColor: "#4AC959",
     color: "#fff",
     boxShadow:
@@ -164,7 +164,7 @@ const buttonStyle = {
         "0 14px 26px -12px rgba(59, 89, 152, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(59, 89, 152, 0.2)"
     }
   },
-  google: {
+  youtube: {
     backgroundColor: "#dd4b39",
     color: "#fff",
     boxShadow:

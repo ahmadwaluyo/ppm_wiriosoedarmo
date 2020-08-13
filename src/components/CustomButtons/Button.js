@@ -64,8 +64,8 @@ RegularButton.propTypes = {
     "rose",
     "white",
     "facebook",
-    "twitter",
-    "google",
+    "whatsapp",
+    "youtube",
     "instagram",
     "transparent"
   ]),

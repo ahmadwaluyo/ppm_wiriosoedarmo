@@ -100,7 +100,10 @@ export default function TeamSection() {
 
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>Testimoni</h2>
+      <h2 className={classes.title}>
+        Testimoni
+        <hr className={classes.hr} />
+      </h2>
         <Slider 
         dots={false}
         infinite={true}
@@ -108,7 +111,7 @@ export default function TeamSection() {
         slidesToShow={3}
         slidesToScroll={1}
         autoplay={true}
-        autoplaySpeed={3500}
+        autoplaySpeed={3000}
         draggable={true}
         >
           {

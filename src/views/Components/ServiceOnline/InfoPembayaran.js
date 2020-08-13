@@ -23,7 +23,7 @@ import Footer from '../SubComponents/components/Footer';
 
 const useStyles = makeStyles(styles);
 
-export default function Admission(props) {
+export default function InfoPembayaran(props) {
   const { datas } = AdmissionPict;
   const classes = useStyles();
   const { ...rest } = props;

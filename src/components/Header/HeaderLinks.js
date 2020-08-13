@@ -70,8 +70,8 @@ export default function HeaderLinks(props) {
               <Link to="/" className={classes.dropdownLink}>
                 Info Pembayaran
               </Link>,
-              <Link to="/" className={classes.dropdownLink}>
-                Kalender Akademik
+              <Link to="/perijinan" className={classes.dropdownLink}>
+                Perijinan
               </Link>,
               <Link to="/login-page" className={classes.dropdownLink}>
                 Login

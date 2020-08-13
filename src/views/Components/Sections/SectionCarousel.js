@@ -8,32 +8,36 @@ import './styles.css';
 
 const content = [
 	{
-		title: 'Vulputate Mollis Ultricies Fermentum Parturient',
+		title: 'Learning Vision',
 		description:
-		'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.',
+		'Mencerminkan Pembelajaran Abad ke-21 Student Center Learning, yang Terintegrasi dengan Nilai-Nilai Keislaman',
 		button: 'Daftar',
 		image: 'https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_background-header.jpg?alt=media&token=f356647b-db18-45eb-855e-88ec438c0520'
 	},
 	{
-		title: 'Tortor Dapibus Commodo Aenean Quam',
+		title: `Tahfidz Al-Qur'an`,
 		description:
-		'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.',
+		`Bersahabat dengan Al-Qur'an, Sebagai Pedoman Hidup Sehari-hari`,
 		button: 'Daftar',
 		image: 'https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_2backgroundheader.jpg?alt=media&token=73b53602-e71e-4cc1-b7fe-4a815123ad67'
 	},
 	{
-		title: 'Phasellus volutpat metus',
+		title: 'Character Building',
 		description:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.',
+		`Menumbuhkan jiwa kemandirian dan kejujuran sebagai modal penting dalam bekal dakwah dan pengabdian kepada agama setelah lulus`,
 		button: 'Daftar',
 		image: 'https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/1.jpg?alt=media&token=0e390fb0-2403-431a-b245-bf1261e1be6d',
 	}
 ];
 
-export default function SectionCarousel () {
+export default function SectionCarousel (props) {
+  const { history } = props.props;
+  const handleRender = () => {
+	history.push("/admission")
+  }
   return (
     <div>
-		<Slider className="slider-wrapper">
+		<Slider className="slider-wrapper" autoplay={5000} duration={4000}>
 			{content.map((item, index) => (
 				<div
           			key={index}
@@ -43,7 +47,7 @@ export default function SectionCarousel () {
 					<div className="inner">
 						<h1>{item.title}</h1>
 						<p>{item.description}</p>
-						<button className="btn">{item.button}</button>
+						<button onClick={handleRender} className="btn">{item.button}</button>
 					</div>
 				</div>
 			))}

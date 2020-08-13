@@ -1,106 +1,104 @@
-/*eslint-disable*/
 import React from "react";
+// nodejs library that concatenates classes
+import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
 // @material-ui/icons
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
+
 // core components
-import styles from "assets/jss/material-kit-react/views/componentsSections/downloadStyle.js";
+// import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
+// import Button from "components/CustomButtons/Button.js";
+// import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
+// import CardFooter from "components/Card/CardFooter.js";
+import CardHeader from "components/Card/CardHeader.js";
+
+import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
+import Slider from "react-slick";
+// import { Container, Card, Row, Col } from "react-bootstrap";
+import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
+
+// import team1 from "assets/img/faces/avatar.jpg";
+import team2 from "assets/img/partnership/logo_ui_kuning.png";
+import team3 from "assets/img/partnership/ugm.png";
+import team4 from "assets/img/partnership/university_madinah.png";
+import team5 from "assets/img/partnership/mara2.png";
+import team6 from "assets/img/partnership/uin.png";
+import team7 from "assets/img/partnership/alazhar.png";
+
+const teams = [
+  {
+    "id": 1,
+    "img": team2,
+  },
+  {
+    "id": 2,
+    "img": team3,
+  },
+  {
+    "id": 3,
+    "img": team4,
+  },
+  {
+    "id": 4,
+    "img": team5,
+  },
+  {
+    "id": 5,
+    "img": team6,
+  },
+  {
+    "id": 6,
+    "img": team7,
+  },
+  {
+    "id": 7,
+    "img": team3,
+  },
+  {
+    "id": 8,
+    "img": team4,
+  }
+]
 
 const useStyles = makeStyles(styles);
 
-export default function SectionDownload() {
+export default function TeamSection() {
   const classes = useStyles();
+  const imageClasses = classNames(
+    // classes.imgRaised,
+    // classes.imgRoundedCircle,
+    classes.imgFluid
+  );
+
   return (
     <div className={classes.section}>
-      <div className={classes.container}>
-        <GridContainer className={classes.textCenter} justify="center">
-          <GridItem xs={12} sm={12} md={8}>
-            <h2>Do you love this UI Kit?</h2>
-            <h4>
-              Cause if you do, it can be yours for FREE. Hit the buttons below
-              to navigate to our website where you can find the kit. We also
-              have the Bootstrap 4 version on plain HTML. Start a new project or
-              give an old Bootstrap project a new look!
-            </h4>
-          </GridItem>
-          <GridItem xs={12} sm={8} md={6}>
-            <Button
-              color="primary"
-              size="lg"
-              href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-download-section"
-              target="_blank"
-            >
-              Free React Download
-            </Button>
-            <Button
-              color="primary"
-              size="lg"
-              href="https://www.creative-tim.com/product/material-kit?ref=mkr-download-section"
-              target="_blank"
-            >
-              Free HTML Downoad
-            </Button>
-          </GridItem>
-        </GridContainer>
-        <br />
-        <br />
-        <GridContainer className={classes.textCenter} justify="center">
-          <GridItem xs={12} sm={12} md={8}>
-            <h2>Want more?</h2>
-            <h4>
-              We{"'"}ve launched{" "}
-              <a
-                href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkr-download-section"
-                target="_blank"
-              >
-                Material Kit PRO React{" "}
-              </a>
-              .It has a huge number of components, sections and example pages.
-              Start Your Development With A Badass Material-UI nspired by
-              Material Design.
-            </h4>
-          </GridItem>
-          <GridItem xs={12} sm={8} md={6}>
-            <Button
-              color="rose"
-              size="lg"
-              href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkr-download-section"
-              target="_blank"
-            >
-              Material Kit PRO
-            </Button>
-            <Button
-              color="rose"
-              size="lg"
-              href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=mkr-download-section"
-              target="_blank"
-            >
-              Material Dashboard PRO
-            </Button>
-          </GridItem>
-        </GridContainer>
-        <div className={classes.textCenter + " " + classes.sharingArea}>
-          <GridContainer justify="center">
-            <h3>Thank you for supporting us!</h3>
-          </GridContainer>
-          <Button color="twitter">
-            <i className={classes.socials + " fab fa-twitter"} /> Tweet
-          </Button>
-          <Button color="facebook">
-            <i className={classes.socials + " fab fa-facebook-square"} /> Share
-          </Button>
-          <Button color="google">
-            <i className={classes.socials + " fab fa-google-plus-g"} />
-            Share
-          </Button>
-          <Button color="github">
-            <i className={classes.socials + " fab fa-github"} /> Star
-          </Button>
-        </div>
-      </div>
+      <h2 className={classes.title}>
+        Partnership
+        <hr className={classes.hr} />
+      </h2>
+        <Slider 
+        dots={false}
+        infinite={true}
+        speed={3000}
+        slidesToShow={4}
+        slidesToScroll={1}
+        autoplay={true}
+        autoplaySpeed={3750}
+        draggable={true}
+        className={classes.containerSlider}
+        >
+          {
+            teams.map(el => 
+              <GridItem xs={8} sm={8} md={6} key={el.id} className={classes.itemGridPartnership}>
+                <img src={el.img} alt="..." className={imageClasses} />
+              </GridItem>
+            )
+          }
+        </Slider>
     </div>
   );
 }

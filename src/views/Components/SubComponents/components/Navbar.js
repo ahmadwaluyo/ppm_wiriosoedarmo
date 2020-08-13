@@ -43,15 +43,14 @@ export default function Navbar () {
                   <Link to="/sejarah">Sejarah</Link>
                   <Link to="/visimisi">Visi dan Misi</Link>
                   <Link to="/fasilitas">Fasilitas</Link>
-                  <Link to="sambutan">Sambutan Pembina</Link>
+                  <Link to="sambutan">Sambutan Mudhir</Link>
                 </div>
               </div>
               <div className="dropdown" href="#news">Service Online <FaCaretDown style={{ paddingLeft: 5 }} size={25} />
                 <div className="dropdown-content">
                   <Link to="/admission">Pendaftaran</Link>
                   <Link to="/">Info Pembayaran</Link>
-                  <Link to="/">Perijinan Putri</Link>
-                  <Link to="/">Perijinan Putra</Link>
+                  <Link to="/perijinan">Perijinan</Link>
                   <Link to="/login-page">Login</Link>
                 </div>
               </div>

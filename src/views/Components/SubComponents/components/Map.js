@@ -27,16 +27,16 @@ export default function Map () {
                             </a>
                         </li>
                         <li className="pt-4 pl-5">
-                            <a href="#!" className="mr-3">
+                            <a href="https://web.facebook.com/pesantren.gombong" alt="facebook" target="_blank" className="mr-3">
                                 <FaFacebookF className="icons" color={'#ABABAB'}/>
                             </a>
-                            <a href="#!" className="mr-3">
+                            <a href="https://www.instagram.com/ponpes_wiriosoedarmo/" alt="instagram" target="_blank" className="mr-3">
                                 <FaInstagram className="icons" color={'#ABABAB'}/>
                             </a>
-                            <a href="#!" className="mr-3">
+                            <a href="https://www.youtube.com/channel/UCMuxxsGqi1x9H3CxRC0OAcg" alt="youtube" target="_blank" className="mr-3">
                                 <FaYoutube className="icons" color={'#ABABAB'}/>
                             </a>
-                            <a href="#!" className="mr-3">
+                            <a href="https://wa.me/081327455703/?text=Assalamu'alaikum PPM Wiriosoedarmo, ada yang bisa di bantu ?" alt="whatsapp" target="_blank" className="mr-3">
                                 <FaWhatsapp className="icons" color={'#ABABAB'}/>
                             </a>
                         </li>
@@ -47,7 +47,7 @@ export default function Map () {
                     <h5 class="text-uppercase">Company</h5>
                     <ul class="list-unstyled pt-2">
                         <li className="pt-2">
-                        <a href="#!">About Us</a>
+                        <a href="/sejarah">About Us</a>
                         </li>
                         <li className="pt-2">
                         <a href="#!">Blog</a>

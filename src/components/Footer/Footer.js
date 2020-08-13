@@ -23,6 +23,7 @@ const useStyles2 = makeStyles(styles2);
 export default function Footer(props) {
   const classes = useStyles();
   const classes2 = useStyles();
+  const { history } = props;
 
   const { whiteFont } = props;
   const footerClasses = classNames({
@@ -93,18 +94,26 @@ export default function Footer(props) {
             <GridContainer justify="center">
               <h3>Thank you for visiting us!</h3>
             </GridContainer>
-            <Button color="twitter">
+            <a href="https://wa.me/081327455703/?text=Assalamu'alaikum PPM Wiriosoedarmo, ada yang bisa di bantu ?" alt="whatsapp" target="_blank">
+            <Button color="whatsapp">
               <i className={classes2.socials + " fab fa-whatsapp"} />
             </Button>
+            </a>
+            <a href="https://web.facebook.com/pesantren.gombong" alt="facebook" target="_blank">
             <Button color="facebook">
               <i className={classes2.socials + " fab fa-facebook-square"} />
             </Button>
-            <Button color="google">
+            </a>
+            <a href="https://www.youtube.com/channel/UCMuxxsGqi1x9H3CxRC0OAcg" alt="youtube" target="_blank">
+            <Button color="youtube">
               <i className={classes2.socials + " fab fa-youtube"} />
             </Button>
+            </a>
+            <a href="https://www.instagram.com/ponpes_wiriosoedarmo/" alt="instagram" target="_blank">
             <Button color="instagram">
               <i className={classes2.socials + " fab fa-instagram"} />
             </Button>
+            </a>
           </div>
         </div>
       </div>

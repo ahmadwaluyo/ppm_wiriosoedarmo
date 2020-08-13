@@ -76,7 +76,6 @@ export default function TeamSection() {
               subheader="September 14, 2016"
             />
           </div>
-
         </div>
         <Card className={classes.root}>
           <CardMedia
