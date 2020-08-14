@@ -27,16 +27,16 @@ export default function Map () {
                             </a>
                         </li>
                         <li className="pt-4 pl-5">
-                            <a href="https://web.facebook.com/pesantren.gombong" alt="facebook" target="_blank" className="mr-3">
+                            <a href="https://web.facebook.com/pesantren.gombong" alt="facebook" target="_blank" rel="noopener noreferrer" className="mr-3">
                                 <FaFacebookF className="icons" color={'#ABABAB'}/>
                             </a>
-                            <a href="https://www.instagram.com/ponpes_wiriosoedarmo/" alt="instagram" target="_blank" className="mr-3">
+                            <a href="https://www.instagram.com/ponpes_wiriosoedarmo/" alt="instagram" target="_blank" rel="noopener noreferrer" className="mr-3">
                                 <FaInstagram className="icons" color={'#ABABAB'}/>
                             </a>
-                            <a href="https://www.youtube.com/channel/UCMuxxsGqi1x9H3CxRC0OAcg" alt="youtube" target="_blank" className="mr-3">
+                            <a href="https://www.youtube.com/channel/UCMuxxsGqi1x9H3CxRC0OAcg" alt="youtube" target="_blank" rel="noopener noreferrer" className="mr-3">
                                 <FaYoutube className="icons" color={'#ABABAB'}/>
                             </a>
-                            <a href="https://wa.me/081327455703/?text=Assalamu'alaikum PPM Wiriosoedarmo, ada yang bisa di bantu ?" alt="whatsapp" target="_blank" className="mr-3">
+                            <a href="https://wa.me/081327455703/?text=Assalamu'alaikum PPM Wiriosoedarmo, ada yang bisa di bantu ?" alt="whatsapp" target="_blank" rel="noopener noreferrer" className="mr-3">
                                 <FaWhatsapp className="icons" color={'#ABABAB'}/>
                             </a>
                         </li>

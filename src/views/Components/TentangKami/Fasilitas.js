@@ -12,13 +12,9 @@ const { fasilitas } = dataFetch.data;
 let imagesKimia = [];
 let imagesKom = [];
 
-fasilitas.map((el) => {
-    if (el.name === "lab_kimia") {
-        imagesKimia = el.data
-    } else {
-        imagesKom = el.data
-    }
-})
+fasilitas.map((el) =>
+  el.name === "lab_kimia" ? imagesKimia = el.data : imagesKom = el.data
+)
 
 
 export default function Fasilitas() {

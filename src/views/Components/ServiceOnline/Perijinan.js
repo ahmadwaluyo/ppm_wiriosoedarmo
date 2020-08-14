@@ -101,7 +101,6 @@ const useStyles = makeStyles(styles);
 
 export default function Admission(props) {
   const classes = useStyles();
-  const { ...rest } = props;
   const [open, setOpen] = React.useState(true);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(8);

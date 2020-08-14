@@ -5,7 +5,6 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import * as $ from "jquery";
 // @material-ui/icons
 // core components
 import Header from "components/Header/Header.js";
@@ -55,20 +54,18 @@ const SubHeaderText = [
 
 export default function Components(props) {
   const [open, setOpen] = React.useState(true);
-  // var [nextImage, setNextImage] = React.useState(0);
-  var nextImage = 0;
   const [index, setIndex] = React.useState(0);
   const biggerThan400 = useMediaPredicate("(min-width: 480px)");
   const smallerThan400 = useMediaPredicate("(max-width: 480px)");
   const classes = useStyles();
   const { ...rest } = props;
-  const imgBackground = 
-  new Array(
+  const imgBackground = [
   "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_background-header.jpg?alt=media&token=f356647b-db18-45eb-855e-88ec438c0520",
   "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/1.jpg?alt=media&token=0e390fb0-2403-431a-b245-bf1261e1be6d",
   "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_2backgroundheader.jpg?alt=media&token=73b53602-e71e-4cc1-b7fe-4a815123ad67",
   "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_background-header.jpg?alt=media&token=f356647b-db18-45eb-855e-88ec438c0520",
-  "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_dsc_2730.jpg?alt=media&token=eec69b13-8564-49ee-bfaf-1feffac26383");
+  "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_dsc_2730.jpg?alt=media&token=eec69b13-8564-49ee-bfaf-1feffac26383"
+];
   
   React.useEffect(() => {
     setTimeout(() => {

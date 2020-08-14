@@ -5,10 +5,6 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import NavPills from "components/NavPills/NavPills.js";
-
-//data fetch
-import AdmissionPict from "data/AdmissionPict";
 
 //loader
 import Loader from "components/Backdrop/Loader";
@@ -24,17 +20,13 @@ import Footer from '../SubComponents/components/Footer';
 const useStyles = makeStyles(styles);
 
 export default function InfoPembayaran(props) {
-  const { datas } = AdmissionPict;
   const classes = useStyles();
-  const { ...rest } = props;
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   const [open, setOpen] = React.useState(true);
-  const [photoIndex, setPhotoIndex] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const handleModal = (id) => {
+  const handleModal = () => {
     setIsOpen(true);
-    setPhotoIndex(id-1);
   }
 
   React.useEffect(() => {
@@ -47,96 +39,29 @@ export default function InfoPembayaran(props) {
     return (
         <>
         <Loader open={open} />
-        <BackgroundHeader data={'STUDENT ADMISSION'}/>
+        <BackgroundHeader data={'PAYMENT'}/>
         {
         isOpen && (
           <Lightbox
-              mainSrc={datas[photoIndex].img}
-              nextSrc={datas[(photoIndex + 1) % datas.length].img}
-              prevSrc={datas[(photoIndex + datas.length - 1) % datas.length].img}
+              mainSrc={"https://i.ibb.co/PDchcmg/Screenshot-from-2020-08-14-09-45-08.png"}
               onCloseRequest={() => setIsOpen(false)}
-              onMovePrevRequest={() =>
-              setPhotoIndex((photoIndex + datas.length - 1) % datas.length)
-              }
-              onMoveNextRequest={() =>
-              setPhotoIndex((photoIndex + 1) % datas.length)
-              }
               animationDuration={2000}
               enableZoom={true}
             />)
         }
         <div className={classes.container}>
             <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={12} className={classes.navWrapper}>
-                <NavPills
-                alignCenter
-                color="primary"
-                tabs={[
-                    {
-                    tabButton: "Brosur 1",
-                    tabContent: (
-                        <GridContainer justify="center">
-                        {
-                            datas.map((el) =>
-                                el.alt === "admission-1" ?
-                                <GridItem xs={12} sm={12} md={4} key={el.id} onClick={() => handleModal(el.id)}>
-                                    <img
-                                    alt={el.alt}
-                                    src={el.img}
-                                    className={navImageClasses}
-                                    />
-                                </GridItem> : ""
-                            )
-                        }
-                        </GridContainer>
-                    )
-                    },
-                    {
-                    tabButton: "Brosur 2",
-                    tabContent: (
-                        <GridContainer justify="center">
-                        {
-                            datas.map((el) =>
-                                el.alt === "admission-2" ?
-                                    <GridItem xs={12} sm={12} md={4} key={el.id} onClick={() => handleModal(el.id)}>
-                                    <img
-                                        alt={el.alt}
-                                        src={el.img}
-                                        className={navImageClasses}
-                                    />
-                                    </GridItem> : ""
-                            )
-                        }
-                        </GridContainer>
-                    )
-                    },
-                    {
-                    tabButton: "Brosur 3",
-                    tabContent: (
-                        <GridContainer justify="center">
-                        {
-                            datas.map((el) =>
-                                el.alt === "admission-3" ?
-                                    <GridItem xs={12} sm={12} md={4} key={el.id} onClick={() => handleModal(el.id)}>
-                                    <img
-                                        alt={el.alt}
-                                        src={el.img}
-                                        className={navImageClasses}
-                                    />
-                                    </GridItem> : ""
-                            )
-                        }
-                        </GridContainer>
-                    )
-                    }
-                ]}
-                />
+            <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
+                <GridContainer justify="center">
+                    <GridItem xs={12} sm={12} md={12} onClick={() => handleModal()}>
+                        <img
+                        alt="Screenshot-from-2020-08-14-09-45-08"
+                        src="https://i.ibb.co/PDchcmg/Screenshot-from-2020-08-14-09-45-08.png"
+                        className={navImageClasses}
+                        />
+                    </GridItem>
+                </GridContainer>
             </GridItem>
-            {/* <div className={classes.description}>
-                <h1>
-                    Contact : 081327455703
-                </h1>
-            </div> */}
             </GridContainer>
         </div>
         <Footer />

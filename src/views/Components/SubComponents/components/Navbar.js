@@ -49,7 +49,7 @@ export default function Navbar () {
               <div className="dropdown" href="#news">Service Online <FaCaretDown style={{ paddingLeft: 5 }} size={25} />
                 <div className="dropdown-content">
                   <Link to="/admission">Pendaftaran</Link>
-                  <Link to="/">Info Pembayaran</Link>
+                  <Link to="/pembayaran">Info Pembayaran</Link>
                   <Link to="/perijinan">Perijinan</Link>
                   <Link to="/login-page">Login</Link>
                 </div>

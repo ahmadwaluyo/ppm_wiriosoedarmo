@@ -26,7 +26,6 @@ const useStyles = makeStyles(styles);
 export default function Admission(props) {
   const { datas } = AdmissionPict;
   const classes = useStyles();
-  const { ...rest } = props;
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   const [open, setOpen] = React.useState(true);
   const [photoIndex, setPhotoIndex] = React.useState(0);

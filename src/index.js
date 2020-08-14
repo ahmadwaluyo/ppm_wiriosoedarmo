@@ -22,6 +22,7 @@ import Achievments from 'views/Components/pages/Achievement';
 import LoginPage from "views/LoginPage/LoginPage.js";
 import Admission from "views/Components/ServiceOnline/Pendaftaran";
 import Permission from "views/Components/ServiceOnline/Perijinan";
+import PaymentInfo from "views/Components/ServiceOnline/InfoPembayaran";
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -38,6 +39,7 @@ ReactDOM.render(
       <Route path="/achievments" component={Achievments} />
       <Route path="/admission" component={Admission} />
       <Route path="/perijinan" component={Permission} />
+      <Route path="/pembayaran" component={PaymentInfo} />
       <Route path="/" component={Components} />
     </Switch>
   </Router>,

@@ -7,21 +7,11 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-// import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-// import Button from "components/CustomButtons/Button.js";
-// import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-// import CardFooter from "components/Card/CardFooter.js";
-import CardHeader from "components/Card/CardHeader.js";
-
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 import Slider from "react-slick";
-// import { Container, Card, Row, Col } from "react-bootstrap";
 import "slick-carousel/slick/slick.css"; 
-// import "slick-carousel/slick/slick-theme.css";
 
-// import team1 from "assets/img/faces/avatar.jpg";
 import team2 from "assets/img/partnership/logo_ui_kuning.png";
 import team3 from "assets/img/partnership/ugm.png";
 import team4 from "assets/img/partnership/university_madinah.png";
