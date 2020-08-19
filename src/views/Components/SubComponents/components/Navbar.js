@@ -54,7 +54,13 @@ export default function Navbar () {
                   <Link to="/login-page">Login</Link>
                 </div>
               </div>
-              <Link to="/landing-page">Article</Link>
+              <div className="dropdown" href="#news">Article & News <FaCaretDown style={{ paddingLeft: 5 }} size={25} />
+                <div className="dropdown-content">
+                  <Link to="/blog">Blog</Link>
+                  <Link to="/news">News</Link>
+                  <Link to="/login-page">Info Beasiswa</Link>
+                </div>
+              </div>
               <Link to="/profile-page">Galery</Link>
               <Link className="icon" onClick={myFunction}>
                   <i className="fa fa-bars"></i>

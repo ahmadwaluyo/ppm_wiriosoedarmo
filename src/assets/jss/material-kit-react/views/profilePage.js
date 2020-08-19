@@ -1,9 +1,9 @@
-import { container, title } from "assets/jss/material-kit-react.js";
+import { containerProfile, title } from "assets/jss/material-kit-react.js";
 
 import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 
 const profilePageStyle = {
-  container,
+  containerProfile,
   profile: {
     textAlign: "center",
     "& img": {
@@ -19,6 +19,11 @@ const profilePageStyle = {
     maxWidth: "600px",
     color: "#999",
     textAlign: "center !important"
+  },
+  btnScroll: {
+    position: "fixed",
+    bottom:20,
+    right: 20
   },
   name: {
     marginTop: "-80px"

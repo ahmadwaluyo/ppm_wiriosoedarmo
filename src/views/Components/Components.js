@@ -15,21 +15,23 @@ import Button from "components/CustomButtons/Button.js";
 import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import SectionNews from "./Sections/SectionBasics.js";
-// import SectionTabs from "./Sections/SectionTabs.js";
-import SectionPills from "./Sections/SectionPills.js";
-// import SectionNotifications from "./Sections/SectionNotifications.js";
-// import SectionTypography from "./Sections/SectionTypography.js";
-// import SectionJavascript from "./Sections/SectionJavascript.js";
+import SectionNews from "./Sections/SectionNews.js";
+import SectionAcademic from "./Sections/SectionAcademic.js";
 import SectionCarousel from "./Sections/SectionCarousel.js";
-import SectionCompletedExamples from "./Sections/SectionCompletedExamples.js";
-// import SectionLogin from "./Sections/SectionLogin.js";
-// import SectionExamples from "./Sections/SectionExamples.js";
-import TeamSection from "../LandingPage/Sections/TeamSection";
-import SectionDownload from "./Sections/SectionDownload.js";
+import SectionAnnouncement from "./Sections/SectionAnnouncement.js";
+import SectionTestimoni from "../LandingPage/Sections/TeamSection";
+import SectionPartnership from "./Sections/SectionDownload.js";
 import Loader from 'components/Backdrop/Loader.js';
 import TextTransition, { presets } from "react-text-transition";
 import styles from "assets/jss/material-kit-react/views/components.js";
+
+//scrollup
+import PropTypes from 'prop-types';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Fab from '@material-ui/core/Fab';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import Zoom from '@material-ui/core/Zoom';
+import Toolbar from '@material-ui/core/Toolbar';
 
 
 //responsive
@@ -51,6 +53,36 @@ const SubHeaderText = [
   `"Al Lughoh Al Yaumiyyah (Mahir bahasa Arab dan bahasa inggris)"`,
   `"Al 'ulum Asy syar'iyyah"`
 ]
+
+function ScrollTop(props) {
+  const classes = useStyles()
+  const { children, window } = props;
+  
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
+  
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+  return (
+    <Zoom in={trigger}>
+      <div onClick={handleClick} role="presentation" className={classes.btnScroll}>
+        {children}
+      </div>
+    </Zoom>
+  );
+}
+
+ScrollTop.propTypes = {
+  children: PropTypes.element.isRequired,
+  window: PropTypes.func,
+};
 
 export default function Components(props) {
   const [open, setOpen] = React.useState(true);
@@ -89,13 +121,14 @@ export default function Components(props) {
         brand="PPM Wiriosoedarmo Gombong"
         rightLinks={<HeaderLinks />}
         fixed
-        color="transparent"
+        color="dark"
         changeColorOnScroll={{
           height: 400,
           color: "white"
         }}
         {...rest}
       />
+      <Toolbar id="back-to-top-anchor" />
       <Parallax image={imgBackground[0]}>
         <div className={classes.container}>
           <GridContainer>
@@ -236,19 +269,18 @@ export default function Components(props) {
           </GridContainer>
         </div>
       </Parallax>
-
       <div className={classNames(classes.main, classes.mainRaised)}>
+        <ScrollTop {...props}>
+          <Fab color="secondary" size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
         <SectionNews />
         <SectionCarousel props={props} />
-        {/* <SectionTabs /> */}
-        <SectionPills />
-        {/* <SectionNotifications /> */}
-        {/* <SectionLogin /> */}
-        {/* <SectionJavascript /> */}
-        <SectionCompletedExamples />
-        {/* <SectionTypography /> */}
-        <SectionDownload />
-        <TeamSection />
+        <SectionAcademic />
+        <SectionAnnouncement />
+        <SectionPartnership />
+        <SectionTestimoni />
       </div>
       <Footer />
     </div>

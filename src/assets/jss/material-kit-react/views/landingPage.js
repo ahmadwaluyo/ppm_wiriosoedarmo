@@ -20,6 +20,11 @@ const landingPageStyle = {
     maxWidth: "500px",
     margin: "10px auto 0"
   },
+  btnScroll: {
+    position: "fixed",
+    bottom:20,
+    right: 20
+  },
   main: {
     background: "#FFFFFF",
     position: "relative",

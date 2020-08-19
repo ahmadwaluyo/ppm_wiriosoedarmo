@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import { CardActionArea, CardContent, CardMedia } from "@material-ui/core";
+import { div, CardContent, CardMedia } from "@material-ui/core";
 
 //animation
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -34,7 +34,6 @@ export default function SectionCompletedExamples() {
           <div className="row">
               <div className="col-xs-12 col-md-4 col-lg-4">
                 <ScrollAnimation animateIn="fadeInUp" animateOnce="true" duration="1">
-                    <CardActionArea>
                         <CardMedia
                         className={classes2.media}
                         image="https://kuliahditurki.com/wp-content/uploads/2018/06/universitas-selcuk-turki.jpg"
@@ -49,12 +48,10 @@ export default function SectionCompletedExamples() {
                             Kurban Idul Adha sebagai bentuk keimanan
                         </div>
                         </CardContent>
-                    </CardActionArea>
                 </ScrollAnimation>
               </div>
               <div className="col-xs-12 col-md-4 col-lg-4">
                   <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1.5">
-                  <CardActionArea>
                       <CardMedia
                       className={classes2.media}
                       image="https://beritaturki.com/wp-content/uploads/2019/03/maxresdefault-1-4-1024x576.jpg"
@@ -69,13 +66,11 @@ export default function SectionCompletedExamples() {
                           King Abdul Aziz University sedang membuka beasiswa pelajar
                       </div>
                       </CardContent>
-                  </CardActionArea>
               </ScrollAnimation>
               </div>
               <div className="clearfix hidden-sm-down hidden-lg-up"></div>
               <div className="col-xs-12 col-md-4 col-lg-4">
                   <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="2">
-                  <CardActionArea>
                       <CardMedia
                       className={classes2.media}
                       image="https://kuliahditurki.net/wp-content/uploads/2020/02/uludag-university.jpg"
@@ -90,7 +85,6 @@ export default function SectionCompletedExamples() {
                           Yuk Ketahui cara aman menangkal virus
                       </div>
                       </CardContent>
-                  </CardActionArea>
               </ScrollAnimation>
               </div>
           </div>

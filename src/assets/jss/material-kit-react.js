@@ -27,12 +27,38 @@ const transition = {
 const containerFluid = {
   paddingRight: "15px",
   paddingLeft: "15px",
-  marginRight: "auto",
-  marginLeft: "auto",
+  // margin: "0 20px 20px 0",
+  marginRight: "7rem",
+  marginLeft: "7rem",
   width: "100%"
 };
+
+const containerFluidProfile = {
+  paddingRight: "15px",
+  paddingLeft: "15px",
+  // margin: "0 20px 20px 0",
+  // marginRight: "10rem",
+  // marginLeft: "5rem",
+  width: "100%"
+};
+
 const container = {
   ...containerFluid,
+  "@media (min-width: 576px)": {
+    maxWidth: "540px"
+  },
+  "@media (min-width: 768px)": {
+    maxWidth: "720px"
+  },
+  "@media (min-width: 992px)": {
+    maxWidth: "960px"
+  },
+  "@media (min-width: 1200px)": {
+    maxWidth: "1140px"
+  }
+};
+const containerProfile = {
+  ...containerFluidProfile,
   "@media (min-width: 576px)": {
     maxWidth: "540px"
   },
@@ -184,7 +210,9 @@ export {
   drawerWidth,
   transition,
   container,
+  containerProfile,
   containerFluid,
+  containerFluidProfile,
   boxShadow,
   card,
   defaultFont,

@@ -17,7 +17,7 @@ import Parallax from "components/Parallax/Parallax.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
-import CardSection from "./Sections/CardSection.js";
+import NewsSection from "./Sections/NewsSection.js";
 
 //loader
 import Loader from 'components/Backdrop/Loader.js';
@@ -61,11 +61,14 @@ function ScrollTop(props) {
 
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
   window: PropTypes.func,
 };
 
-
-export default function LandingPage(props) {
+export default function NewsPage(props) {
   const [open, setOpen] = React.useState(true);
   const classes = useStyles();
   const { ...rest } = props;
@@ -123,7 +126,7 @@ export default function LandingPage(props) {
               <KeyboardArrowUpIcon />
             </Fab>
           </ScrollTop>
-          <CardSection />
+          <NewsSection />
         </div>
       </div>
       <Footer />
