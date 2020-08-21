@@ -17,7 +17,7 @@ export default function SambutanPembina() {
         <Loader open={open} />
         <BackgroundHeader data={'Sambutan'}/>
             <div className="content">
-                <h1>SAMBUTAN MUDOFIR</h1>
+                <h1>SAMBUTAN MUDIR</h1>
                 <hr></hr>
                 <div className="mt-5">
                 <p>

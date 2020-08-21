@@ -86,7 +86,7 @@ export default function Footer(props) {
             className={aClasses}
             target="_blank"
           >
-            PPM Wiriosoedarmo
+            PM Wiriosoedarmo
           </a>
         </div>
         <div className={classes.center}>

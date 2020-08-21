@@ -118,7 +118,7 @@ export default function Components(props) {
       <Loader open={open} />
       <Header
         logo={require('assets/img/wiriosoedarmo.png')}
-        brand="PPM Wiriosoedarmo Gombong"
+        brand="PM Wiriosoedarmo Gombong"
         rightLinks={<HeaderLinks />}
         fixed
         color="dark"

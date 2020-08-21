@@ -49,7 +49,7 @@ export default function HeaderLinks(props) {
               Fasilitas
             </Link>,
             <Link to="/sambutan" className={classes.dropdownLink}>
-              Sambutan Mudhir
+              Sambutan Mudir
             </Link>
           ]}
         />
@@ -103,7 +103,7 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
           <Link
-            to="/profile-page"
+            to="/galery"
             className={classes.navLink}
           >
           <PhotoLibrary className={classes.icons} /> Galery

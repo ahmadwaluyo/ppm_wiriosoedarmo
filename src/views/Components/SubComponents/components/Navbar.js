@@ -35,7 +35,7 @@ export default function Navbar () {
           <nav className="topnav" id="myTopnav">
               <Link to="/" className="title left pl-5 mr-auto p-3">
                 <img src={require('../images/wiriosoedarmo.png')} alt="logo" style={{ width: 50, height: 50 }} />
-                <span className="p-3">PPM Wiriosoedarmo Gombong</span>
+                <span className="p-3">PM Wiriosoedarmo Gombong</span>
               </Link>
               <Link to="/">Home</Link>
               <div className="dropdown" href="#news">Tentang Kami <FaCaretDown style={{ paddingLeft: 5 }} size={25} />
@@ -43,7 +43,8 @@ export default function Navbar () {
                   <Link to="/sejarah">Sejarah</Link>
                   <Link to="/visimisi">Visi dan Misi</Link>
                   <Link to="/fasilitas">Fasilitas</Link>
-                  <Link to="sambutan">Sambutan Mudhir</Link>
+                  <Link to="/sambutan">Sambutan Mudir</Link>
+                  <Link to="/jenjang-pendidikan">Jenjang Pendidikan</Link>
                 </div>
               </div>
               <div className="dropdown" href="#news">Service Online <FaCaretDown style={{ paddingLeft: 5 }} size={25} />

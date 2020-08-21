@@ -23,11 +23,12 @@ import "slick-carousel/slick/slick.css";
 
 // import team1 from "assets/img/faces/avatar.jpg";
 import team2 from "assets/img/faces/christian.jpg";
-import team3 from "assets/img/faces/kendall.jpg";
-import team4 from "assets/img/faces/card-profile1-square.jpg";
-import team5 from "assets/img/faces/card-profile2-square.jpg";
+// import team3 from "assets/img/faces/kendall.jpg";
 import team6 from "assets/img/faces/card-profile4-square.jpg";
-import team7 from "assets/img/faces/card-profile5-square.jpg";
+const team3 = `https://scontent.fjog3-1.fna.fbcdn.net/v/t1.0-9/22885893_201418833734900_649428011699348951_n.jpg?_nc_cat=103&_nc_sid=174925&_nc_eui2=AeG-SrcPUsT0xPB48GSj1OziextadMw5O7N7G1p0zDk7s5cplsx4Dq_2R5HisSNj6s1jG-3nJIoePZnGuerFfsNT&_nc_ohc=if4Y6Vn0MgEAX_4YKco&_nc_ht=scontent.fjog3-1.fna&oh=987b7b836b04387520851298443fd879&oe=5F630121`
+const team4 = `https://i.ibb.co/VxfYLRh/rsz-84056977-184480152826792-984029371754872832-n.jpg`
+const team7 = `https://scontent.fjog3-1.fna.fbcdn.net/v/t1.0-9/90997142_857338168025827_7161453882671890432_n.jpg?_nc_cat=107&_nc_sid=174925&_nc_eui2=AeFPPxmFveMbISLcBs-KAisR3_wWUqOri4Hf_BZSo6uLgUkHKklP104UV48k1c0QgVdT3el-w2nRvyXe0LAKu5-k&_nc_ohc=eptCL_tAkkIAX8k-hp6&_nc_ht=scontent.fjog3-1.fna&oh=f6f2c8dddafd72889befda3359cff443&oe=5F63FCA3`
+const team5 = `https://scontent.fjog3-1.fna.fbcdn.net/v/t1.0-9/117400166_3771137856247737_8509947078661340032_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_eui2=AeEDg3I-enEcOittL8IwfgbukCYApHUeCIWQJgCkdR4IhUf2TiHHIlMwGRHtdpyUFe_lz1c_kS_ms-ALSYnYmIxz&_nc_ohc=h-H5oS0fCxoAX93Tmsw&_nc_ht=scontent.fjog3-1.fna&oh=5e946796516937371a9e7599b6ec9e44&oe=5F663071`;
 
 const teams = [
   {
@@ -74,7 +75,7 @@ const teams = [
   },
   {
     "id": 7,
-    "name": "Fina Listiani",
+    "name": "Fina Dwi",
     "img": team3,
     "title": "Ketua PCM Gombong",
     "quotes": "PPM Wiriosoedarmo dibangun untuk memenuhi kebutuhan akan pendidikan moral dan karakter pada generasi muda saat ini yang mengalami kecenderungan menurun"
@@ -82,7 +83,7 @@ const teams = [
   {
     "id": 8,
     "name": "Widiantoro Triatmadji",
-    "img": team4,
+    "img": team3,
     "title": "Santri SMA PPM Wiriosoedarmo",
     "quotes": "PPM Wiriosoedarmo bekerjasama dengan kampus-kampus di dalam dan luar negeri. Ini sangat membantu terutama saya yang sudah kelas 12 SMA"
   }
