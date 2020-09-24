@@ -33,7 +33,7 @@ export default function Footer() {
             </a>
             <div className="footer-copyright text-center py-3 d-flex justify-content-center align-items-center pb-5"> 
                 <span>Copyright 2020 ©
-                    <Link to="/" className="pl-1">ppmwiriosoedarmo.com</Link>
+                    <Link to="/" className="pl-1">wiriosoedarmogombong.com</Link>
                 </span>
             </div>
         </div>

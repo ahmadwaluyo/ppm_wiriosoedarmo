@@ -11,9 +11,12 @@ const { fasilitas } = dataFetch.data;
 
 let imagesKimia = [];
 let imagesKom = [];
+// let imagesAsrama = [];
+// let imagesMasjid = [];
+// let imagesRoom = [];
 
 fasilitas.map((el) =>
-  el.name === "lab_kimia" ? imagesKimia = el.data : imagesKom = el.data
+  el.name === "lab_kimia" ?  imagesKimia = el.data : el.name === "lab_komputer" ? imagesKom = el.data : ""
 )
 
 

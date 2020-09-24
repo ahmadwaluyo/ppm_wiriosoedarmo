@@ -16,7 +16,7 @@ export default function Contact () {
                 </a>
                 <a className="nav-item nav-link" href="/">
                     <FaEnvelope size={20} color={'#ABABAB'}/>
-                    <span className="pl-2">email : ahmad.umb15@gmail.com</span>
+                    <span className="pl-2">email : pesantren.wiriosoedarmomgb@gmail.com</span>
                     </a>
                 </div>
             </div>

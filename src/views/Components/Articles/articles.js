@@ -16,11 +16,10 @@ import 'react-image-lightbox/style.css';
 
 import BackgroundHeader from '../SubComponents/components/BackgroundHeader';
 import Footer from '../SubComponents/components/Footer';
-const img = require('assets/img/pembayaran/info_pembayaran.png');
 
 const useStyles = makeStyles(styles);
 
-export default function InfoPembayaran(props) {
+export default function Articles(props) {
   const classes = useStyles();
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   const [open, setOpen] = React.useState(true);
@@ -44,24 +43,26 @@ export default function InfoPembayaran(props) {
         {
         isOpen && (
           <Lightbox
-              mainSrc={img}
+              mainSrc={"https://i.ibb.co/PDchcmg/Screenshot-from-2020-08-14-09-45-08.png"}
               onCloseRequest={() => setIsOpen(false)}
               animationDuration={2000}
               enableZoom={true}
             />)
         }
-        <div className="d-flex justify-content-center">
+        <div className={classes.container}>
+            <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
                 <GridContainer justify="center">
                     <GridItem xs={12} sm={12} md={12} onClick={() => handleModal()}>
                         <img
                         alt="Screenshot-from-2020-08-14-09-45-08"
-                        src={img}
+                        src="https://i.ibb.co/PDchcmg/Screenshot-from-2020-08-14-09-45-08.png"
                         className={navImageClasses}
                         />
                     </GridItem>
                 </GridContainer>
             </GridItem>
+            </GridContainer>
         </div>
         <Footer />
         </>

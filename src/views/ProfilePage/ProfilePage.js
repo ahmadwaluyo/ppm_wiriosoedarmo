@@ -11,9 +11,6 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-//data fetch
-import Galeries from "data/Galeries";
-
 //loader
 import Loader from "components/Backdrop/Loader";
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
@@ -29,8 +26,11 @@ import Toolbar from '@material-ui/core/Toolbar';
 //lightbox
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-const GridItem = lazy(() => import("components/Grid/GridItem.js"));
+import GridItem from "components/Grid/GridItem.js";
+import Galeries from "data/Galeries";
+// const Galeries = lazy(() => import("data/Galeries"));
 
+console.log(Galeries);
 
 const useStyles = makeStyles(styles);
 
@@ -83,6 +83,16 @@ export default function GaleryPage(props) {
       setOpen(false)
     }, 2000)
   }, [])
+
+  const loading = (
+    <React.Fragment>
+      <div id="container-main">
+        <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <br />
+        Loading...
+      </div>
+    </React.Fragment>
+  )
 
   return (
     <div>
@@ -143,12 +153,14 @@ export default function GaleryPage(props) {
                         <GridContainer justify="center">
                           {
                             datas.map((el) =>
-                              <GridItem xs={12} sm={12} md={4} key={el.id} onClick={() => handleModal(el.id)}>
+                              <GridItem xs={12} sm={12} md={3} key={el.id} onClick={() => handleModal(el.id)}>
+                                <React.Suspense fallback={loading}>
                                 <img
                                   alt={el.alt}
                                   src={el.img}
                                   className={navImageClasses}
                                 />
+                                </React.Suspense>
                               </GridItem>
                             )
                           }
@@ -162,12 +174,14 @@ export default function GaleryPage(props) {
                           {
                             datas.map((el) =>
                             el.alt === "peresmian" ?
-                                <GridItem xs={12} sm={12} md={4} key={el.id} onClick={() => handleModal(el.id)}>
+                                <GridItem xs={12} sm={12} md={3} key={el.id} onClick={() => handleModal(el.id)}>
+                                  <React.Suspense fallback={loading}>
                                   <img
                                     alt={el.alt}
                                     src={el.img}
                                     className={navImageClasses}
                                   />
+                                  </React.Suspense>
                                 </GridItem> : ""
                             )
                           }
@@ -181,12 +195,14 @@ export default function GaleryPage(props) {
                           {
                             datas.map((el) =>
                             el.alt === "aero" ?
-                                <GridItem xs={12} sm={12} md={4} key={el.id} onClick={() => handleModal(el.id)}>
+                                <GridItem xs={12} sm={12} md={3} key={el.id} onClick={() => handleModal(el.id)}>
+                                  <React.Suspense fallback={loading}>
                                   <img
                                     alt={el.alt}
                                     src={el.img}
                                     className={navImageClasses}
                                   />
+                                  </React.Suspense>
                                 </GridItem> : ""
                             )
                           }
@@ -200,12 +216,14 @@ export default function GaleryPage(props) {
                           {
                             datas.map((el) =>
                             el.alt === "kegiatan" ?
-                                <GridItem xs={12} sm={12} md={4} key={el.id} onClick={() => handleModal(el.id)}>
+                                <GridItem xs={12} sm={12} md={3} key={el.id} onClick={() => handleModal(el.id)}>
+                                  <React.Suspense fallback={loading}>
                                   <img
                                     alt={el.alt}
                                     src={el.img}
                                     className={navImageClasses}
                                   />
+                                  </React.Suspense>
                                 </GridItem> : ""
                             )
                           }

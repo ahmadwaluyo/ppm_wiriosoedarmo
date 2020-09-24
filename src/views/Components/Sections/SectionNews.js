@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // card plugin
 import { CardContent, CardMedia } from "@material-ui/core";
 //animation
@@ -27,38 +28,42 @@ export default function SectionBasics() {
         <div class="row mt-5">
               <div className={classes2.containerMedia}>
                 <ScrollAnimation animateIn="fadeInUp" animateOnce="true" duration="1">
-                  <CardMedia
-                  className={classes2.media}
-                  image="https://kuliahditurki.com/wp-content/uploads/2018/06/universitas-selcuk-turki.jpg"
-                  title="Contemplative Reptile"
-                  />
-                  <CardContent>
-                  <div className={classes2.containerInfo}>
-                      Test
-                  </div>
-                  <br />
-                  <div className={classes2.info}>
-                      Kurban Idul Adha sebagai bentuk keimanan
-                  </div>
-                  </CardContent>
+                  <Link to="/articles" className={classes2.link}>
+                    <CardMedia
+                      className={classes2.media}
+                      image={require("assets/img/news_img/waqaf.jpeg")}
+                      title="Waqaf Quran"
+                      />
+                      <CardContent>
+                      <div className={classes2.containerInfo}>
+                      MENERIMA WAKAF AL QURAN
+                      </div>
+                      <br />
+                      <div className={classes2.info}>
+                      PM Wiriosoedarmo Muhammadiyah Gombong menerima wakaf al Quran dari seorang aghnia sejumlah 100 eksemplar.
+                      </div>
+                    </CardContent>
+                  </Link>
                 </ScrollAnimation>
               </div>
               <div className={classes2.containerMedia}>
               <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1">
+                <Link to="/admission" className={classes2.link}>
                   <CardMedia
                   className={classes2.media}
-                  image="https://beritaturki.com/wp-content/uploads/2019/03/maxresdefault-1-4-1024x576.jpg"
-                  title="Contemplative Reptile"
+                  image={require("assets/img/1.jpg")}
+                  title="PSB Wiriosoedarmo"
                   />
                   <CardContent>
                   <div className={classes2.containerInfo}>
-                      Test
+                      PSB PM Wiriosoedarmo
                   </div>
                   <br />
                   <div className={classes2.info}>
-                      King Abdul Aziz University sedang membuka beasiswa pelajar
+                      PM Wiriosoedarmo membuka pendaftaran santri baru untuk tahun pelajaran 2021/2022
                   </div>
                   </CardContent>
+                </Link>
               </ScrollAnimation>
               </div>
               <div class="clearfix hidden-sm-down hidden-lg-up"></div>
@@ -142,6 +147,11 @@ const useStyles2 = makeStyles((theme) => ({
     fontSize: 20,
     fontWeight: 700,
     fontFamily: "Roboto Slab",
-
+  },
+  link: {
+    color: "#3c4858",
+    "&:hover" : {
+      color: "#000"
+    }
   }
 }));

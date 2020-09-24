@@ -19,16 +19,28 @@ export default function SambutanPembina() {
             <div className="content">
                 <h1>SAMBUTAN MUDIR</h1>
                 <hr></hr>
-                <div className="mt-5">
-                <p>
-                Lembaga Pendidikan Muslimah Indonesia (LPMI) Al-Izzah didirikan Oleh Ustad H. Ali Imron, M.Ag pada tanggal 17 Juli 2006 dan diresmikan oleh Menteri Pemuda dan Olahraga Bapak Adiyaksa Daut dan Bapak Imam Kabul selaku Walikota Batu. Berkedudukan di Jalan Indragiri Gang Pangkur No 87, Sumberejo, Kota Batu, LPMI Al Izzah dibangun berlandaskan keinginan yang kuat memberi jawaban alternatif tehadap kecemasan para orang tua mengenai masa depan anak-anaknya, khususnya anak-anak putri. Sebuah lembaga yang mengintegrasikan nilai-nilai fundamental Islam dengan pemberian wawasan yang komperehensif mengenai tantangan di zamannya. Di awali tahun 2006 Al Izzah menyelenggarakan pendidikan menengah (SMP) dan di tahun 2011 memulai program pedidikan menengah atas (SMA).
-                </p><br/>
-                <p>
-                Dengan mengikrarkan diri menjadi sekolah berstandard internasional dan ter-akreditasi A, sekolah ini telah beranjak menjadi salah satu sekolah unggulan di Kota Batu, LPMI Al Izzah Batu menggambarkan kemajuan yang signifikan terhadap komitmen membangun nilai-nilai keislaman dan moralitas secara umum.
-                </p><br/>
-                <p>
-                Menawarkan cara-cara baru dan inovatif, Lembaga Pendidikan Muslimah Indonesia (LPMI) progam SMP-SMA Al-Izzah mengamalkan ilmu pengetahuan dan teknologi yang terintegrasi dengan nilai-nilai islami. Dalam sistem ini, kita berharap santri mengenal secara mantap tentang jati dirinya sebagai generasi Islam, sekaligus mampu manampilkan bakat dan potensinya serta memandang secara optimis setiap fenomena mutakhir yang kelak dihadapinya. Artinya, mereka harus dididik dalam sebuah lembaga yang mengintegrasikan nilai-nilai fundamental Islam dengan pemberian wawasan yang komperehensif mengenai tantangan di zamannya.
-                </p>
+                <div className="mt-5 mb-5">
+                    <p>Assalamu’alaikum Wr. Wb</p>
+                    <br />
+                    <p>Segala puji tertuju kepada Allah SWT semata yang telah mencurahkan nikmat, Iman, Islam dan kehidupan kepada kita. Shalawat dan salam mudah-mudahan tetap dilimpahkan kepada Rasulullah SAW teladan hidup insan bertaqwa. Teriring do’a semoga kita senantiasa diberikan oleh Allah SWT kekuatan sehingga dapat mengemban amanah dan menunaikan kewajiban dengan sebaik-baiknya.</p>
+
+                    <p>Profil Pesantren Modern Wiriosoedarmo Muhammadiyah Gombong ini merupakan media informasi dari kami, agar masyarakat, intansi dan pemerintah dapat mengenal lebih dekat lagi aktifitas para praktisi Sekolah Pesantren Modern Wiriosoedarmo dalam mengemban amanah Dakwah Islamiyah sesuai dengan Visinya :</p>
+
+                    <p><strong><i>“Menjadi pesantren modern yang mencetak kader-kader pemimpin umat, giat beribadah, berakhlakul karimah, menguasai ilmu pengetahuan dan teknologi“</i></strong></p>
+
+                    <p>Berangkat dari visi tersebut maka segenap civitas akademika berkomitmen untuk menjadikan Pesantren Wiriosoedarmo sebagai Sentra membangun komitmen keislaman model pendidikan Rasulullah SAW.</p>
+
+                    <p>Sistem pendidikan terpadu antara Pendidikan formal tingkat SMP–SMA dan pendidikan pesantren mengembangkan program unggulan (Qiroatul Kutub, Tahfizhul Qur’an, Bahasa Arab, Bahasa Inggris dan Al 'ulum As syar'iyyah ), juga pendidikan karakter berorganisasi yang membentuk jiwa kepemimpinan santri. Sehingga kelak mereka menjadi layaknya pohon kelapa yang dapat tumbuh  dan memberi manfaat di berbagai tempat di masyarakat.</p>
+
+                    <p>Struktur organisasi yang solid dibawah naungan dikdasmen PCM Gombong, ditopang oleh sarana dan prasarana yang memadai membuat proses belajar mengajar santri berlangsung dengan kondusif, terlebih kegiatan pembelajaran para santri Wiriosoedarmo terpisah dengan siswa umum yang lain. Hal ini diperuntukkan agar santri lebih fokus dalam mengikuti kegiatan pembelajaran khusus pesantren yang berbeda dengan siswa umum yang lain.</p>
+
+                    <p>Harapan kami, siapapun santri yang datang menuntut ilmu ke Sekolah Pesantren Modern Muhammadiyah Gombong, akan merasa betah berada di lingkungan pesantren.  Sehingga visi misi pesantren dapat tercapai dengan baik, dan lulusannya menjadi kader yang kompeten dalam berdakwah membangun ummat. Akhirul kalam</p>
+                    <br />
+                    <p>Nashrun minallah wa fathun qariib. Fastabiqul khoirot</p>
+                    <br />
+                    <p>Wassalamu’alaikum Wr.Wb</p>
+                    <br />
+                    <p><strong>Heri Pramono, S. Pd</strong></p>
                 </div>
             </div>
         <Footer />

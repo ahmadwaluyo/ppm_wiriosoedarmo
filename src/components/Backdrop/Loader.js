@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Loader(props) {
   const classes = useStyles();
-  console.log('ini props', props);
   const { open } = props;
   
   return (

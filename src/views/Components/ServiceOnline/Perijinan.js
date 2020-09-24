@@ -1,22 +1,15 @@
 import React from 'react';
-
-// @material-ui/core components
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-
 //loader
 import Loader from "components/Backdrop/Loader";
-
 import BackgroundHeader from '../SubComponents/components/BackgroundHeader';
 import Footer from '../SubComponents/components/Footer';
 import { ContactPhone, AccountBalanceWallet, ReportProblem, LabelImportant, PeopleOutline } from "@material-ui/icons";
-
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import NavPills from "components/NavPills/NavPills.js";
-
 import styles from "assets/jss/material-kit-react/views/componentsSections/pillsStyle.js";
-
 //table
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -26,13 +19,15 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
-
 // list
 import ListComponent from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import FileViewer from 'react-file-viewer';
 
+const file = require('assets/file/teknis_telepon2.pdf');
+const type = 'pdf';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -119,6 +114,10 @@ export default function Admission(props) {
       setOpen(false)
     }, 2000)
   }, [])
+
+  const onError = (e) => {
+    console.log(e, "error in file-viewer");
+  }
 
 
     return (
@@ -264,6 +263,9 @@ export default function Admission(props) {
                         }
                       ]}
                     />
+                    <div>Perubahan peraturan selengkapnya dibawah ini</div>
+                    <FileViewer fileType={type} filePath={file} onError={onError} />
+                    <span className="d-flex justify-content-center m-5">Atau, dapat juga di download <a href={file} download alt="file" className="pl-2">disini</a></span>
                   </GridItem>
                 </GridContainer>
               </div>

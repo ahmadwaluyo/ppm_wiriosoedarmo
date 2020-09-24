@@ -92,7 +92,7 @@ export default function LandingPage(props) {
         {...rest}
       />
       <Toolbar id="back-to-top-anchor" />
-      <Parallax filter image={require("assets/img/bg2.jpg")}>
+      <Parallax filter image={require("assets/img/blog_img/blog2.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -116,7 +116,7 @@ export default function LandingPage(props) {
           </GridContainer>
         </div>
       </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={classNames(classes.main)}>
         <div className={classes.container}>
           <ScrollTop {...props}>
             <Fab color="secondary" size="small" aria-label="scroll back to top">

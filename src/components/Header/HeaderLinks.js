@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import React from "react";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
@@ -50,6 +49,9 @@ export default function HeaderLinks(props) {
             </Link>,
             <Link to="/sambutan" className={classes.dropdownLink}>
               Sambutan Mudir
+            </Link>,
+            <Link to="/jenjang-pendidikan" className={classes.dropdownLink}>
+              Jenjang Pendidikan
             </Link>
           ]}
         />
@@ -94,9 +96,6 @@ export default function HeaderLinks(props) {
               </Link>,
               <Link to="/news" className={classes.dropdownLink}>
                 News
-              </Link>,
-              <Link to="/pembayaran" className={classes.dropdownLink}>
-                Info Beasiswa
               </Link>
             ]}
           />

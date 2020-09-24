@@ -31,7 +31,8 @@ export default function News () {
                     <div className="grid__item-sm">
                         <div>
                             <p className="grid__item__category">Employee Feedback</p>
-                            <h4 className="grid__item__title">How to Ask Your Manager for Feedback</h4>
+                            {/* <h4 className="grid__item__title" onClick={history.push({ pathname: "/news/:id"})}>How to Ask Your Manager for Feedback</h4> */}
+                            <Link to="/news/:id"><h4 className="grid__item__title">How to Ask Your Manager for Feedback</h4></Link>
                             <p className="grid__item__author">By Annette Cardwell</p>
                         </div>
                         <div>
@@ -39,9 +40,10 @@ export default function News () {
                         </div>
                     </div>
                     <div className="grid__item-sm">
+                        
                         <div>
                             <p className="grid__item__category">Performance Reviews</p>
-                            <h4 className="grid__item__title">HR's Guide to Performance Review Questions</h4>
+                            <Link to="/news/:id"><h4 className="grid__item__title">HR's Guide to Performance Review Questions</h4></Link>
                             <p className="grid__item__author">By Annette Cardwell</p>
                         </div>
                         <div>
@@ -62,19 +64,19 @@ export default function News () {
             <div className="grid__item-md">
                 <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="..." className="grid__item__img" />
                 <p className="grid__item__category">Performance Reviews</p>
-                <h4 className="grid__item__title">How to Get More Out of Your Performance Review Data</h4>
+                <Link to="/news/:id"><h4 className="grid__item__title">How to Get More Out of Your Performance Review Data</h4></Link>
                 <p className="grid__item__author">By Annette Cardwell</p>
             </div>
             <div className="grid__item-md">
                 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="..." className="grid__item__img" />
                 <p className="grid__item__category">Company Culture</p>
-                <h4 className="grid__item__title">Are Companies Ready for a 4-Day Workweek?</h4>
+                <Link to="/news/:id"><h4 className="grid__item__title">Are Companies Ready for a 4-Day Workweek?</h4></Link>
                 <p className="grid__item__author">By Jennifer Romolini</p>
             </div>
             <div className="grid__item-md">
                 <img src="https://images.unsplash.com/photo-1417733403748-83bbc7c05140?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="..." className="grid__item__img" />
                 <p className="grid__item__category">Employee Feedback</p>
-                <h4 className="grid__item__title">7 Signs Your Employees Are Job Hunting (And How to Address Them)</h4>
+                <Link to="/news/:id"><h4 className="grid__item__title">7 Signs Your Employees Are Job Hunting (And How to Address Them)</h4></Link>
                 <p className="grid__item__author">By Deanna deBara</p>
             </div>
             </section>

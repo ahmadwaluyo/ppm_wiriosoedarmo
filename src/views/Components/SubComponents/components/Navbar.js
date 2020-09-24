@@ -59,10 +59,9 @@ export default function Navbar () {
                 <div className="dropdown-content">
                   <Link to="/blog">Blog</Link>
                   <Link to="/news">News</Link>
-                  <Link to="/login-page">Info Beasiswa</Link>
                 </div>
               </div>
-              <Link to="/profile-page">Galery</Link>
+              <Link to="/galery">Galery</Link>
               <Link className="icon" onClick={myFunction}>
                   <i className="fa fa-bars"></i>
               </Link>

@@ -23,7 +23,7 @@ export default function Map () {
                         <li className="pt-3 pl-5">
                             <a href="#!">
                                 <FaEnvelope size={18} color={'#ABABAB'}/>
-                                <span className="contact pl-3">email : ahmad.umb15@gmail.com</span>
+                                <span className="contact pl-3">email : <p className="contact-email">pesantren.wiriosoedarmomgb@gmail.com</p></span>
                             </a>
                         </li>
                         <li className="pt-4 pl-5">

@@ -91,7 +91,7 @@ export default function DetailArticles(props) {
         {...rest}
       />
       <Toolbar id="back-to-top-anchor" />
-      <Parallax filter image={require("assets/img/bg2.jpg")}>
+      <Parallax filter image={"https://cdn.ymaws.com/www.itsmfusa.org/resource/resmgr/images/more_images/news-3.jpg"}>        
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -115,7 +115,7 @@ export default function DetailArticles(props) {
           </GridContainer>
         </div>
       </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={classNames(classes.main)}>
         <div className={classes.container}>
           <ScrollTop {...props}>
             <Fab color="secondary" size="small" aria-label="scroll back to top">
