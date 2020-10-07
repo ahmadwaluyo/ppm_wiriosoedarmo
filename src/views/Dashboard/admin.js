@@ -26,6 +26,8 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 import Wysiwyg from './wysiwyg';
+import GridItem from 'components/Grid/GridItem';
+import { Row, Col, Form } from "react-bootstrap";
 
 function Copyright() {
   return (
@@ -140,8 +142,9 @@ export default function Dashboard(props) {
   const [openProfile, setOpenProfile] = useState(isTrue);
   const [auth, setAuth] = useState(true);
   const [state, setState] = useState({
-    id: dataToken.id,
-    profileName : dataToken.name
+    id: dataToken.payload.id,
+    profileName : dataToken.payload.fullname,
+    username: dataToken.payload.username
   })
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -163,19 +166,6 @@ export default function Dashboard(props) {
     localStorage.clear();
     history.push("/login-page")    
   }
-
-  // useEffect(() => {
-  //   fetchUser().then(() => {})
-  // }, [])
-
-  // const fetchUser = async() => {
-  //   try {
-  //     let dataUser = await axios.get("https://wiriosoedarmo.herokuapp.com/login")
-  //     console.log(dataUser, "<<<< data User");
-  //   } catch (e) {
-  //     console.log(e.message);
-  //   }
-  // }
   
   return (
     <div className={classes.root}>
@@ -247,22 +237,9 @@ export default function Dashboard(props) {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid> */}
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ flexDirection: "row", height: 500 }}>
               <h2>Article Post</h2>
-              <Paper className={classes.paper}>
-                {/* <Orders /> */}
-                <Wysiwyg />
-              </Paper>
+                <Wysiwyg id={state.id} author={state.username} />
             </Grid>
           </Grid>
         </Container>

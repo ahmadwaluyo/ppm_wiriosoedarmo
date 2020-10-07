@@ -9,6 +9,7 @@ import "assets/css/loading.css";
 
 //dashboard admin
 const Dashboard = lazy(() => import("views/Dashboard/admin"));
+const Articles = lazy(() => import("views/Dashboard/articles/articles"));
 
 // pages for this product
 const Components = lazy(() => import("views/Components/Components.js"));
@@ -47,30 +48,31 @@ const loading = (
 
 ReactDOM.render(
   <React.Suspense fallback={loading}>
-  <SnackbarProvider maxSnack={3}>
-  <Router history={hist}>
-    <Switch>
-      <Route path="/dashboard" render={props => localStorage.getItem("token") ? <Dashboard {...props} /> : <Redirect to="/login-page"/>} />
-      <Route exact path="/profile/:id" component={DetailProfile} />
-      <Route exact path="/news/:id" component={DetailArticle} />
-      <Route exact path="/articles" component={DetailArticle} />
-      <Route exact path="/news" component={NewsPage} />
-      <Route exact path="/blog" component={BlogPage} />
-      <Route exact path="/galery" component={Galery} />
-      <Route exact path="/login-page" component={LoginPage} />
-      <Route exact path="/jenjang-pendidikan" component={JenjangPendidikan} />
-      <Route exact path="/fasilitas" component={Fasilitas} />
-      <Route exact path="/sejarah" component={Sejarah} />
-      <Route exact path="/visimisi" component={VisiMisi} />
-      <Route exact path="/sambutan" component={Sambutan} />
-      <Route exact path="/achievments" component={Achievments} />
-      <Route exact path="/admission" component={Admission} />
-      <Route exact path="/perijinan" component={Permission} />
-      <Route exact path="/pembayaran" component={PaymentInfo} />
-      <Route exact path="/" component={Components} />
-    </Switch>
-  </Router>
-  </SnackbarProvider>
+    <SnackbarProvider maxSnack={3}>
+      <Router history={hist}>
+        <Switch>
+          <Route exact path="/dashboard/articles" component={Articles} />
+          <Route path="/dashboard" render={props => localStorage.getItem("token") ? <Dashboard {...props} /> : <Redirect to="/login-page" />} />
+          <Route exact path="/profile/:id" component={DetailProfile} />
+          <Route exact path="/news/:id" component={DetailArticle} />
+          <Route exact path="/articles" component={DetailArticle} />
+          <Route exact path="/news" component={NewsPage} />
+          <Route exact path="/blog" component={BlogPage} />
+          <Route exact path="/galery" component={Galery} />
+          <Route exact path="/login-page" component={LoginPage} />
+          <Route exact path="/jenjang-pendidikan" component={JenjangPendidikan} />
+          <Route exact path="/fasilitas" component={Fasilitas} />
+          <Route exact path="/sejarah" component={Sejarah} />
+          <Route exact path="/visimisi" component={VisiMisi} />
+          <Route exact path="/sambutan" component={Sambutan} />
+          <Route exact path="/achievments" component={Achievments} />
+          <Route exact path="/admission" component={Admission} />
+          <Route exact path="/perijinan" component={Permission} />
+          <Route exact path="/pembayaran" component={PaymentInfo} />
+          <Route exact path="/" component={Components} />
+        </Switch>
+      </Router>
+    </SnackbarProvider>
   </React.Suspense>,
   document.getElementById("root")
 );

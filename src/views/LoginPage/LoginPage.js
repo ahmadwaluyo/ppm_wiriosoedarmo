@@ -21,8 +21,8 @@ import CardFooter from "components/Card/CardFooter.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Loader from 'components/Backdrop/Loader.js';
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
-import Lottie from 'react-lottie-player';
-import lottieJson from 'assets/lottie/loading.json';
+import { LOCAL_API } from "utils/API";
+import "./loading.css";
 
 import image from "assets/img/bg7.jpg";
 
@@ -37,7 +37,8 @@ export default function LoginPage(props) {
     password: '',
     email: '',
     error: false,
-    loading: false
+    loading: false,
+    url: LOCAL_API
   })
   setTimeout(function() {
     setCardAnimation("");
@@ -59,14 +60,14 @@ export default function LoginPage(props) {
     })
     try {
       let payload = {
-        nama : state.username,
+        username : state.username,
         password: state.password,
         email : state.email
       }
       console.log(payload,"<<<< payload");
-      let dataToken = await axios.post("https://wiriosoedarmo.herokuapp.com/login", payload)
+      // let dataToken = await axios.post("https://wiriosoedarmo.herokuapp.com/login", payload)
+      let dataToken = await axios.post(`${state.url}/api/v1/users/login`, payload)
       if (dataToken) {
-        console.log(dataToken, "<<<< data token");
         await localStorage.setItem("token", JSON.stringify(dataToken.data));
         history.push("/dashboard")
         setState({
@@ -140,14 +141,8 @@ export default function LoginPage(props) {
                   <CardBody>
                     {
                       state.loading ?
-                      <div style={{ display: "flex", width: "100%", justifyContent: "center"}}>
-                        <div style={{ width: 220, height: 220, alignSelf: "center"}}>
-                            <Lottie
-                            loop
-                            animationData={lottieJson}
-                            play
-                          />
-                        </div>
+                      <div style={{ display: "flex", width: "100%", justifyContent: "center", height: 220, alignItems: "center" }}>
+                      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                       </div>
                       :
                       <>

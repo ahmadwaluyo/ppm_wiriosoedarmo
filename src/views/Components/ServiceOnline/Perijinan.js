@@ -24,10 +24,8 @@ import ListComponent from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import FileViewer from 'react-file-viewer';
 
-const file = require('assets/file/teknis_telepon2.pdf');
-const type = 'pdf';
+const file = './teknis_telepon2.pdf';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -263,9 +261,7 @@ export default function Admission(props) {
                         }
                       ]}
                     />
-                    <div>Perubahan peraturan selengkapnya dibawah ini</div>
-                    <FileViewer fileType={type} filePath={file} onError={onError} />
-                    <span className="d-flex justify-content-center m-5">Atau, dapat juga di download <a href={file} download alt="file" className="pl-2">disini</a></span>
+                    <span className="d-flex justify-content-center m-5">Perubahan peraturan selengkapnya dapat juga di download <a href={file} download alt="file" className="pl-2">disini</a></span>
                   </GridItem>
                 </GridContainer>
               </div>

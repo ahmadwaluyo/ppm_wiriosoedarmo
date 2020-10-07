@@ -27,6 +27,26 @@ export default function SectionBasics() {
         </div>
         <div class="row mt-5">
               <div className={classes2.containerMedia}>
+                <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1">
+                  <Link to="/admission" className={classes2.link}>
+                    <CardMedia
+                    className={classes2.media}
+                    image={require("assets/img/1.jpg")}
+                    title="PSB Wiriosoedarmo"
+                    />
+                    <CardContent>
+                    <div className={classes2.containerInfo}>
+                        PSB PM Wiriosoedarmo
+                    </div>
+                    <br />
+                    <div className={classes2.info}>
+                        PM Wiriosoedarmo membuka pendaftaran santri baru untuk tahun pelajaran 2021/2022
+                    </div>
+                    </CardContent>
+                  </Link>
+                </ScrollAnimation>
+              </div>
+              <div className={classes2.containerMedia}>
                 <ScrollAnimation animateIn="fadeInUp" animateOnce="true" duration="1">
                   <Link to="/articles" className={classes2.link}>
                     <CardMedia
@@ -45,26 +65,6 @@ export default function SectionBasics() {
                     </CardContent>
                   </Link>
                 </ScrollAnimation>
-              </div>
-              <div className={classes2.containerMedia}>
-              <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1">
-                <Link to="/admission" className={classes2.link}>
-                  <CardMedia
-                  className={classes2.media}
-                  image={require("assets/img/1.jpg")}
-                  title="PSB Wiriosoedarmo"
-                  />
-                  <CardContent>
-                  <div className={classes2.containerInfo}>
-                      PSB PM Wiriosoedarmo
-                  </div>
-                  <br />
-                  <div className={classes2.info}>
-                      PM Wiriosoedarmo membuka pendaftaran santri baru untuk tahun pelajaran 2021/2022
-                  </div>
-                  </CardContent>
-                </Link>
-              </ScrollAnimation>
               </div>
               <div class="clearfix hidden-sm-down hidden-lg-up"></div>
               <div className={classes2.containerMedia}>
