@@ -1,21 +1,17 @@
 import React from "react";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
-// @material-ui/icons
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-// import ShareIcon from '@material-ui/icons/Share';
-// import MoreVertIcon from '@material-ui/icons/MoreVert';
-// import Chat from '@material-ui/icons/Chat';
-
-// core components
 import { Card, CardHeader, CardMedia, CardContent, Avatar, Typography } from '@material-ui/core';
-
 import { title } from "assets/jss/material-kit-react.js";
+import moment from "moment";
+import parser from "html-react-parser";
 
-export default function TeamSection() {
+export default function TeamSection(props) {
+  const { data } = props;
   const classes = useStyles();
+  console.log(data)
 
+  if (data) {
   return (
     <div className={classes.section}>
       <h2 className={classes.title}>Pojok Santri</h2>
@@ -25,17 +21,16 @@ export default function TeamSection() {
           <div className="col-md-6">
             <CardMedia
               className={classes.media}
-              image="https://miro.medium.com/max/1000/0*5fukrioa4Qd-dDpx"
+              image={data[0].image_url}
               title="Paella dish"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h3">
-                UI {"&"} UX, Mana yang lebih penting?
+                {data[0].title}
               </Typography>
               <Typography variant="body3" color="textSecondary" component="h5">
-                Istilah UI dan UX saat ini memang sedang populer. 
-                Meskipun mirip tetapi mungkin banyak yang belum tahu perbedaan di antara keduanya.{" "}
-                <Link to="/" className={classes.readMore}>Read More ...</Link>
+                {parser(data[0].article.substring(0, 200) + '...')}
+                <Link to="/" className={classes.readMore}>Read More</Link>
               </Typography>
             </CardContent>
             <CardHeader
@@ -45,8 +40,8 @@ export default function TeamSection() {
                   <img src="https://miro.medium.com/max/1000/0*5fukrioa4Qd-dDpx" alt="img" width="80px" />
                 </Avatar>
               }
-              title="Shrimp Paella"
-              subheader="September 14, 2016"
+              title={data[0].author}
+              subheader={moment(data[0].createdAt).format('MMMM DD, YYYY')}
             />
           </div>
           <div className="col-md-6">
@@ -285,6 +280,11 @@ export default function TeamSection() {
       </div>
     </div>
   );
+} else {
+  return (
+    <div>Loading ....</div>
+  )
+}
 }
 
 const useStyles = makeStyles((theme) => ({

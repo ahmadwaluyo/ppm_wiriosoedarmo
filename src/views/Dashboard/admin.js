@@ -22,9 +22,6 @@ import { Menu, AccountCircle } from '@material-ui/icons';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
 import Wysiwyg from './wysiwyg';
 import GridItem from 'components/Grid/GridItem';
 import { Row, Col, Form } from "react-bootstrap";
@@ -136,15 +133,18 @@ export default function Dashboard(props) {
   let isTrue = "none";
   let isFalse = "";
   let dataToken = JSON.parse(localStorage.getItem("token"));
+  const { content } = dataToken;
+  console.log(content, "<<<< data token")
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   const [openProfile, setOpenProfile] = useState(isTrue);
   const [auth, setAuth] = useState(true);
   const [state, setState] = useState({
-    id: dataToken.payload.id,
-    profileName : dataToken.payload.fullname,
-    username: dataToken.payload.username
+    id: content.id,
+    profileName : content.fullname,
+    username: content.username,
+    token: content.token
   })
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -239,7 +239,7 @@ export default function Dashboard(props) {
           <Grid container spacing={3}>
             <Grid item xs={12} style={{ flexDirection: "row", height: 500 }}>
               <h2>Article Post</h2>
-                <Wysiwyg id={state.id} author={state.username} />
+                <Wysiwyg id={state.id} author={state.username} token={state.token} />
             </Grid>
           </Grid>
         </Container>

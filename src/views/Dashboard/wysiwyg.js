@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { EditorState } from 'draft-js';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Button, TextField, MenuItem, FormControl } from "@material-ui/core";
 import axios from 'axios';
-import { LOCAL_API } from 'utils/API';
+import { PUBLIC_API } from 'utils/API';
 import Swal from 'sweetalert2'
 import parser from 'html-react-parser';
 
@@ -28,7 +29,7 @@ const optionPost = [
 ];
 
 const ControlledEditor = (props) => {
-  console.log(props, "<<< props")
+  const history = useHistory();
   const [state, setState] = useState({
     title: '',
     img_url: '',
@@ -52,13 +53,20 @@ const ControlledEditor = (props) => {
       article: await state.article
     }
     try {
-      const data = await axios.post(`${LOCAL_API}/api/v1/posts`, dataToSend)
+      const data = await axios.post(`${PUBLIC_API}/api/v1/posts`, dataToSend, {
+        headers: {
+          'authorization': `Bearer ${props.token}`
+        }
+      })
       if (data.status === 201) {
         Swal.fire(
           'Success!',
           'You are successfully create new article!',
           'success'
         )
+        setTimeout(() => {
+          history.push('/dashboard/articles')
+        }, 2000)
       }
       console.log(data);
     } catch  (err) {

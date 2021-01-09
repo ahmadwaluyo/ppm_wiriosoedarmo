@@ -1,11 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
-// @material-ui/icons
-
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -14,11 +11,10 @@ import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
-
+import axios from "axios";
+import { PUBLIC_API } from "utils/API";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
-
 import CardSection from "./Sections/CardSection.js";
-
 //loader
 import Loader from 'components/Backdrop/Loader.js';
 
@@ -37,7 +33,6 @@ const useStyles = makeStyles(styles);
 function ScrollTop(props) {
   const classes = useStyles()
   const { children, window } = props;
-  
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
@@ -66,15 +61,32 @@ ScrollTop.propTypes = {
 
 
 export default function LandingPage(props) {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
+  const [state, setState] = useState({
+    loading: true,
+    articleData: []
+  })
   const classes = useStyles();
   const { ...rest } = props;
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
         setOpen(false);
     }, [1500])
   }, [])
+
+  useEffect(() => {
+    fetchArticles()
+  }, [])
+
+  const fetchArticles = async () => {
+    const { data } = await axios.get(`${PUBLIC_API}/api/v1/posts`)
+    await setState({
+      loading: false,
+      articleData: data.content
+    })
+    console.log(data.content, "<<<<, data article")
+  }
 
   return (
     <div>
@@ -123,7 +135,10 @@ export default function LandingPage(props) {
               <KeyboardArrowUpIcon />
             </Fab>
           </ScrollTop>
-          <CardSection />
+          {
+            state.loading ? <Loader open={state.loading} /> :
+            <CardSection data={state.articleData} />
+          }
         </div>
       </div>
       <Footer />

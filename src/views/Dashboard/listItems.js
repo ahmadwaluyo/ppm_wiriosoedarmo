@@ -34,7 +34,7 @@ export const mainListItems = (
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-        <ListItemText style={{color: "rgba(0, 0, 0, 0.87)"}} primary="Customers" />
+        <ListItemText style={{color: "rgba(0, 0, 0, 0.87)"}} primary="Students" />
     </ListItem>
     </Link>
     <Link to="/dashboard/reports">

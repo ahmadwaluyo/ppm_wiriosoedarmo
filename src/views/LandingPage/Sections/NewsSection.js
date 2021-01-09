@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import moment from "moment";
+import parser from "html-react-parser";
 import "./News.css";
 
-export default function News () {
+export default function News (props) {
+    const { data } = props;
+    console.log(data, "<<<<< masuk props ke news");
     return (
         <main className="main">
         <div className="title">
@@ -21,10 +25,10 @@ export default function News () {
         <article className="grid">
             <section className="grid__col-2">
                 <div className="grid__item-lg">
-                    <img src="https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="..." className="grid__item__img" />
-                    <p className="grid__item__category">Managing People</p>
-                    <h3 className="grid__item__title">Like a Boss: "I have to have my first tough conversation with an employee who's underperforming."</h3>
-                    <p className="grid__item__author">By Jennifer Romolini</p>
+                    <img src={data[0].image_url} alt="..." className="grid__item__img" />
+                    <p className="grid__item__category">{data[0].tags}</p>
+                    <h3 className="grid__item__title">{parser(data[0].article.substring(0, 200) + `  <Link to="/">Read More...</Link>`)}</h3>
+                    <p className="grid__item__author">By {data[0].author}</p>
                 </div>
                 <div>
                     <h3 className="grid__col__title">Spotlight</h3>

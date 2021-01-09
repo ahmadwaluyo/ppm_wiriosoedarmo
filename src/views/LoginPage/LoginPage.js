@@ -21,7 +21,7 @@ import CardFooter from "components/Card/CardFooter.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Loader from 'components/Backdrop/Loader.js';
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
-import { LOCAL_API } from "utils/API";
+import { PUBLIC_API } from "utils/API";
 import "./loading.css";
 
 import image from "assets/img/bg7.jpg";
@@ -38,7 +38,7 @@ export default function LoginPage(props) {
     email: '',
     error: false,
     loading: false,
-    url: LOCAL_API
+    url: PUBLIC_API
   })
   setTimeout(function() {
     setCardAnimation("");
@@ -64,9 +64,7 @@ export default function LoginPage(props) {
         password: state.password,
         email : state.email
       }
-      console.log(payload,"<<<< payload");
-      // let dataToken = await axios.post("https://wiriosoedarmo.herokuapp.com/login", payload)
-      let dataToken = await axios.post(`${state.url}/api/v1/users/login`, payload)
+      let dataToken = await axios.post(`${state.url}/api/v1/auth/login`, payload)
       if (dataToken) {
         await localStorage.setItem("token", JSON.stringify(dataToken.data));
         history.push("/dashboard")

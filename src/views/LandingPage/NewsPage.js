@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -29,6 +29,8 @@ import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
 import Toolbar from '@material-ui/core/Toolbar';
+import axios from "axios";
+import { PUBLIC_API } from "utils/API";
 
 const dashboardRoutes = [];
 
@@ -72,12 +74,29 @@ export default function NewsPage(props) {
   const [open, setOpen] = React.useState(true);
   const classes = useStyles();
   const { ...rest } = props;
+  const [state, setState] = useState({
+    loading: true,
+    articleData: []
+  })
 
   React.useEffect(() => {
     setTimeout(() => {
         setOpen(false);
     }, [1500])
   }, [])
+
+  useEffect(() => {
+    fetchArticles()
+  }, [])
+
+  const fetchArticles = async () => {
+    const { data } = await axios.get(`${PUBLIC_API}/api/v1/posts`)
+    await setState({
+      loading: false,
+      articleData: data.content
+    })
+    console.log(data.content, "<<<<, data article")
+  }
 
   return (
     <div>
@@ -126,7 +145,10 @@ export default function NewsPage(props) {
               <KeyboardArrowUpIcon />
             </Fab>
           </ScrollTop>
-          <NewsSection />
+          {
+            state.loading ? <Loader open={state.loading} /> :
+          <NewsSection data={state.articleData} />
+          }
         </div>
       </div>
       <Footer />
