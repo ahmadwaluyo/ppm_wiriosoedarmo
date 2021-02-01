@@ -27,7 +27,7 @@ export default function VisiMisi() {
                 <span style={{ fontSize: 20, fontWeight: 700 }}>MISI</span><br />
                 <ol className="pt-3 pl-3">
                     <li>Mempersiapkan generasi yang berkualitas yang seimbang dalam ilmu dan amal menuju terbentuknya khairu ummah.</li>
-                    <li>Mengajarkan ilmu pengetahuan agama dan umum secara seimbang menuju ulama yang berjiwa besar dan intelek.</li>
+                    <li>Menyelenggarakan pendidikan yang kondusif terhadap pembentukan pribadi yang sholeh, berbudi tinggi, berbadan sehat, berpengetahuan luas, dan berkhidmat kepada masyarakat.</li>
                     <li>Mengajarkan ilmu pengetahuan agama dan umum secara seimbang menuju ulama yang berjiwa besar dan intelek.</li>
                     <li>Mempersiapkan warga negara yang berkepribadian Indonesia yang beriman dan bertakwa kepada Allah SWT.</li>
                 </ol><br />
