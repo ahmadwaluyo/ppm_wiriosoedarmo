@@ -3,6 +3,7 @@ import Map from './Map';
 import { Link } from 'react-router-dom';
 import { FaAngleUp } from 'react-icons/fa';
 import * as $ from 'jquery';
+import "./responsive-component.css";
 
 export default function Footer() {
     $(function() {
@@ -31,7 +32,7 @@ export default function Footer() {
             <a href="#top" className="scroll">
                 <FaAngleUp className="scrollup" size={20} />
             </a>
-            <div className="footer-copyright text-center py-3 d-flex justify-content-center align-items-center pb-5"> 
+            <div className="footer-copyright text-center py-3 d-flex justify-content-center align-items-center"> 
                 <span>Copyright 2020 ©
                     <Link to="/" className="pl-1">wiriosoedarmogombong.com</Link>
                 </span>

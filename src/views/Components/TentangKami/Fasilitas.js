@@ -11,9 +11,6 @@ const { fasilitas } = dataFetch.data;
 
 let imagesKimia = [];
 let imagesKom = [];
-// let imagesAsrama = [];
-// let imagesMasjid = [];
-// let imagesRoom = [];
 
 fasilitas.map((el) =>
   el.name === "lab_kimia" ?  imagesKimia = el.data : el.name === "lab_komputer" ? imagesKom = el.data : ""
@@ -78,7 +75,7 @@ export default function Fasilitas() {
                     enableZoom={true}
                 />
             )}
-            <div className="wrapper mt-3 mb-3">
+            <div className="wrapper mb-3">
                 <div className="h2"><h2><strong>Lab Kimia</strong></h2></div>
                 <div className="cards">
                     {

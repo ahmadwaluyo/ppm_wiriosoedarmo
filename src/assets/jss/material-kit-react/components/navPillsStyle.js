@@ -4,6 +4,7 @@ import {
   infoColor,
   successColor,
   warningColor,
+  goldColor,
   dangerColor
 } from "assets/jss/material-kit-react.js";
 
@@ -45,7 +46,7 @@ const navPillsStyle = theme => ({
     textAlign: "center",
     transition: "all .3s",
     padding: "10px 15px",
-    color: "#555555",
+    color: "#FFFFFF",
     height: "auto",
     opacity: "1",
     maxWidth: "100%",
@@ -111,6 +112,14 @@ const navPillsStyle = theme => ({
       backgroundColor: dangerColor,
       boxShadow:
         "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4)"
+    }
+  },
+  gold: {
+    "&,&:hover": {
+      color: "#FFFFFF",
+      backgroundColor: goldColor,
+      boxShadow:
+        "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgb(254, 206, 65)"
     }
   },
   rose: {

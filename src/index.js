@@ -6,6 +6,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
 import "assets/css/loading.css";
+import "animate.css/animate.min.css";
 
 //dashboard admin
 const Dashboard = lazy(() => import("views/Dashboard/admin"));

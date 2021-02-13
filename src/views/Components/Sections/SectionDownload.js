@@ -19,6 +19,8 @@ import team5 from "assets/img/partnership/mara2.png";
 import team6 from "assets/img/partnership/uin.png";
 import team7 from "assets/img/partnership/alazhar.png";
 
+import ScrollAnimation from 'react-animate-on-scroll';
+
 const teams = [
   {
     "id": 1,
@@ -66,10 +68,12 @@ export default function TeamSection() {
 
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>
-        Partnership
-        <hr className={classes.hr} />
-      </h2>
+        <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1">
+          <h2 className={classes.title}>
+            Partnership
+            <hr className={classes.hr} />
+          </h2>
+        </ScrollAnimation>
         <Slider 
         dots={false}
         infinite={true}

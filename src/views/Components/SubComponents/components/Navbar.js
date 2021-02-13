@@ -1,71 +1,53 @@
-import React from 'react';
-import Contact from './Contact';
-import { Link } from 'react-router-dom';
-import { FaCaretDown } from 'react-icons/fa'
-import * as $ from 'jquery';
-import '../styles/HomeStyle.css';
+import React, { Fragment } from "react";
+// import { HomeOutlined, InfoCircleOutlined, LaptopOutlined, FileOutlined, PictureOutlined } from '@ant-design/icons';
+import { useHistory } from "react-router-dom";
+import { Navbar, NavDropdown, Nav } from "react-bootstrap";
+import Contact from "./Contact";
 
-export default function Navbar () {
+export default function NavbarPage () {
+  const history = useHistory();
 
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-
-      $(function() {
-        //caches a jQuery object containing the header element
-        var header = $('.mainnav');
-        $(window).scroll(function() {
-           var scroll = $(window).scrollTop();
-           if (scroll >= header.height()) {
-             header.fadeOut("slow");
-           } else {
-             header.fadeIn("slow");
-           }
-        });
-    });
-
-    return (
-        <div className="mainnav">
-          <Contact />
-          <nav className="topnav" id="myTopnav">
-              <Link to="/" className="title left pl-5 mr-auto p-3">
-                <img src={require('../images/wiriosoedarmo.png')} alt="logo" style={{ width: 50, height: 50 }} />
-                <span className="p-3">PM Wiriosoedarmo Gombong</span>
-              </Link>
-              <Link to="/">Home</Link>
-              <div className="dropdown" href="#news">Tentang Kami <FaCaretDown style={{ paddingLeft: 5 }} size={25} />
-                <div className="dropdown-content">
-                  <Link to="/sejarah">Sejarah</Link>
-                  <Link to="/visimisi">Visi dan Misi</Link>
-                  <Link to="/fasilitas">Fasilitas</Link>
-                  <Link to="/sambutan">Sambutan Mudir</Link>
-                  <Link to="/jenjang-pendidikan">Jenjang Pendidikan</Link>
-                </div>
-              </div>
-              <div className="dropdown" href="#news">Service Online <FaCaretDown style={{ paddingLeft: 5 }} size={25} />
-                <div className="dropdown-content">
-                  <Link to="/admission">Pendaftaran</Link>
-                  <Link to="/pembayaran">Info Pembayaran</Link>
-                  <Link to="/perijinan">Perijinan</Link>
-                  <Link to="/login-page">Login</Link>
-                </div>
-              </div>
-              <div className="dropdown" href="#news">Article & News <FaCaretDown style={{ paddingLeft: 5 }} size={25} />
-                <div className="dropdown-content">
-                  <Link to="/blog">Blog</Link>
-                  <Link to="/news">News</Link>
-                </div>
-              </div>
-              <Link to="/galery">Galery</Link>
-              <Link className="icon" onClick={myFunction}>
-                  <i className="fa fa-bars"></i>
-              </Link>
-          </nav>
-        </div>
-    )
+  return (
+    <Fragment>
+    <Contact />
+    <Navbar style={{backgroundColor: "transparent", fontWeight: 500}} variant="dark" expand="md">
+      <Navbar.Brand onClick={() => history.push("/")}>
+      <img
+        width={50}
+        src="https://i.ibb.co/PctKXNL/wiriosoedarmo.png"
+        alt="img-wirio"
+        title="PPM Wiriosoedarmo Gombong"
+        />&nbsp;
+        PPM Wiriosoedarmo Gombong
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-light">
+        <div className="mr-auto"></div>
+        <Nav className="m2-2">
+          <Nav.Link onClick={() => history.push("/")} className="d-flex align-items-center">Home</Nav.Link>
+          <NavDropdown title="Tentang Kami" id="basic-nav-dropdown">
+            <NavDropdown.Item onClick={() => history.push("/sejarah")}>Sejarah</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/visimisi")}>Visi & Misi</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/fasilitas")}>Fasilitas</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/sambutan")}>Sambutan Mudhir</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/jenjang-pendidikan")}>Jenjang Pendidikan</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Service Online" id="basic-nav-dropdown">
+            <NavDropdown.Item onClick={() => history.push("/admission")}>Pendaftaran</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/pembayaran")}>Info Pembayaran</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/perijinan")}>Perijinan</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/login-page")}>Login</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Article & News" id="basic-nav-dropdown">
+            <NavDropdown.Item onClick={() => history.push("/blog")}>Blog</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/news")}>News</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => history.push("/announcement")}>Announcement</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link onClick={() => history.push("/galery")} className="d-flex align-items-center">Galery</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+    </Fragment>
+  )
 }
+

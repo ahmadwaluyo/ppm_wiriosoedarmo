@@ -28,6 +28,9 @@ import ListComponent from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+
+//scroll animation
+import ScrollAnimation from "react-animate-on-scroll";
 // import DraftsIcon from '@material-ui/icons/Drafts';
 // import SendIcon from '@material-ui/icons/Send';
 
@@ -120,8 +123,10 @@ export default function SectionPills() {
   return (
     <>
     <div className={classes.titleSeparate}>
-      <div className={classes.titleNews}>Akademis</div>
-      <hr className={classes.hr} />
+      <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1">
+        <div className={classes.titleNews}>Akademis</div>
+        <hr className={classes.hr} />
+      </ScrollAnimation>
     </div>
     <div className={classes.section}>
       <div className={classes.container}>
@@ -129,7 +134,7 @@ export default function SectionPills() {
           <GridContainer>
             <GridItem xs={12} sm={12} md={12} lg={12}>
               <NavPills
-                color="success"
+                color="gold"
                 tabs={[
                   {
                     tabButton: "Sistem Pendidikan",

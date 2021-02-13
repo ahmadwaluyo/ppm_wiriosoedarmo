@@ -6,11 +6,11 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import { div, CardContent, CardMedia } from "@material-ui/core";
+import { CardContent, CardMedia, Card, CardActionArea } from "@material-ui/core";
+import { Row, Col } from "react-bootstrap";
 
 //animation
 import ScrollAnimation from 'react-animate-on-scroll';
-import "animate.css/animate.min.css";
 
 import styles from "assets/jss/material-kit-react/views/componentsSections/completedStyle.js";
 
@@ -23,71 +23,78 @@ export default function SectionCompletedExamples() {
   return (
     <>
     <div className={classes2.titleSeparate}>
-      <div className={classes2.titleNews}>Events</div>
-      <hr className={classes2.hr} />
+      <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1">
+        <div className={classes2.titleNews}>Events</div>
+        <hr className={classes2.hr} />
+      </ScrollAnimation>
     </div>
     <div className={classes.section}>
       <div className={classes.container}>
         <div className={classes2.titleNews2}>Announcement</div>
-        <GridContainer justify="center" style={{ margin: "8% 0 0 0"}}>
+        <GridContainer justify="center" style={{ margin: "4% 0 0 0"}}>
           <GridItem xs={12} sm={12} md={12}>
-          <div className="row">
-              <div className="col-xs-12 col-md-4 col-lg-4">
-                <ScrollAnimation animateIn="fadeInUp" animateOnce="true" duration="1">
-                        <CardMedia
-                        className={classes2.media}
-                        image="https://kuliahditurki.com/wp-content/uploads/2018/06/universitas-selcuk-turki.jpg"
-                        title="Contemplative Reptile"
-                        />
-                        <CardContent>
-                        <div className={classes2.containerInfo}>
-                            Test
-                        </div>
-                        <br />
-                        <div className={classes2.info}>
-                            Kurban Idul Adha sebagai bentuk keimanan
-                        </div>
-                        </CardContent>
-                </ScrollAnimation>
-              </div>
-              <div className="col-xs-12 col-md-4 col-lg-4">
-                  <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="1.5">
-                      <CardMedia
-                      className={classes2.media}
-                      image="https://beritaturki.com/wp-content/uploads/2019/03/maxresdefault-1-4-1024x576.jpg"
-                      title="Contemplative Reptile"
-                      />
-                      <CardContent>
-                      <div className={classes2.containerInfo}>
-                          Test
-                      </div>
-                      <br />
-                      <div className={classes2.info}>
-                          King Abdul Aziz University sedang membuka beasiswa pelajar
-                      </div>
-                      </CardContent>
-              </ScrollAnimation>
-              </div>
-              <div className="clearfix hidden-sm-down hidden-lg-up"></div>
-              <div className="col-xs-12 col-md-4 col-lg-4">
-                  <ScrollAnimation animateIn='fadeInUp' animateOnce="true" duration="2">
-                      <CardMedia
-                      className={classes2.media}
-                      image="https://kuliahditurki.net/wp-content/uploads/2020/02/uludag-university.jpg"
-                      title="Contemplative Reptile"
-                      />
-                      <CardContent>
-                      <div className={classes2.containerInfo}>
-                          Test
-                      </div>
-                      <br />
-                      <div className={classes2.info}>
-                          Yuk Ketahui cara aman menangkal virus
-                      </div>
-                      </CardContent>
-              </ScrollAnimation>
-              </div>
-          </div>
+          <Row>
+              <Col>
+                <CardActionArea>
+                  <Card className={classes2.cardColor}>
+                    <CardMedia
+                    className={classes2.media}
+                    image="https://kuliahditurki.com/wp-content/uploads/2018/06/universitas-selcuk-turki.jpg"
+                    title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                    <div className={classes2.containerInfo}>
+                        Test
+                    </div>
+                    <br />
+                    <div className={classes2.info}>
+                        Kurban Idul Adha sebagai bentuk keimanan
+                    </div>
+                    </CardContent>
+                  </Card>
+                </CardActionArea>
+              </Col>
+              <Col>
+                <CardActionArea>
+                  <Card className={classes2.cardColor}>
+                    <CardMedia
+                    className={classes2.media}
+                    image="https://kuliahditurki.net/wp-content/uploads/2020/02/uludag-university.jpg"
+                    title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                    <div className={classes2.containerInfo}>
+                        Test
+                    </div>
+                    <br />
+                    <div className={classes2.info}>
+                        King Abdul Aziz University sedang membuka beasiswa pelajar
+                    </div>
+                    </CardContent>
+                  </Card>
+                </CardActionArea>
+              </Col>
+              <Col>
+                <CardActionArea>
+                  <Card className={classes2.cardColor}>
+                    <CardMedia
+                    className={classes2.media}
+                    image="https://kuliahditurki.net/wp-content/uploads/2020/02/uludag-university.jpg"
+                    title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                    <div className={classes2.containerInfo}>
+                        Test
+                    </div>
+                    <br />
+                    <div className={classes2.info}>
+                        Yuk Ketahui cara aman menangkal virus
+                    </div>
+                    </CardContent>
+                  </Card>
+                </CardActionArea>
+              </Col>
+          </Row>
           </GridItem>
         </GridContainer>
       </div>
@@ -152,6 +159,11 @@ const useStyles2 = makeStyles((theme) => ({
     borderBottom: "1px solid #465161",
     width: "42px",
     lineHeight: "100px",
-    position: "absolute"
+    position: "absolute",
+    // paddingTop: "16px"
+  },
+  cardColor: {
+    backgroundColor: "transparent",
+    height: "50vh"
   }
 }));

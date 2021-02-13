@@ -16,12 +16,13 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 // import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
-
+import MediaQuery from "react-responsive";
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
+    <MediaQuery minDeviceWidth={1224} device={{ deviceWidth: 1600 }}>
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
           <Link to="/" className={classes.navLink} color="transparent">
@@ -109,5 +110,6 @@ export default function HeaderLinks(props) {
           </Link>
       </ListItem>
     </List>
+    </MediaQuery>
   );
 }

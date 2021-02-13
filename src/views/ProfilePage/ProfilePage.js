@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -28,7 +28,6 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import GridItem from "components/Grid/GridItem.js";
 import Galeries from "data/Galeries";
-// const Galeries = lazy(() => import("data/Galeries"));
 
 console.log(Galeries);
 

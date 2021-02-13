@@ -1,14 +1,12 @@
 import React from 'react';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import "./responsive-component.css";
 
 export default function Contact () {
     return (
-        <nav className="navbar p-2 navbar-expand-lg d-flex justify-content-end">
+        <nav className="navbar-contact p-2 navbar-expand-lg d-flex justify-content-start" style={{ backgroundColor: "#000"}}>
             <a className="nav-item-left nav-item nav-link active disabled" href="/">Informasi Pendaftaran</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div>
                 <div className="navbar-nav">
                 <a className="nav-item nav-link" href="/">
                     <FaPhone size={16} color={'#ABABAB'}/>

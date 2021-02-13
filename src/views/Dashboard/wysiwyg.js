@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { EditorState } from 'draft-js';
+// import { EditorState } from 'draft-js';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Button, TextField, MenuItem, FormControl } from "@material-ui/core";
 import axios from 'axios';
 import { PUBLIC_API } from 'utils/API';
 import Swal from 'sweetalert2'
-import parser from 'html-react-parser';
+// import parser from 'html-react-parser';
 
 const optionPost = [
   {

@@ -16,6 +16,7 @@ export default function VisiMisi() {
         <>
         <Loader open={open} />
         <BackgroundHeader data={'Visi dan Misi'}/>
+        <br />
             <div className="content pb-5">
                 <h1>VISI DAN MISI</h1>
                 <hr></hr>

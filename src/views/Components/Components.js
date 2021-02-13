@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // react components for routing our app without refresh
@@ -23,6 +23,7 @@ import SectionTestimoni from "../LandingPage/Sections/TeamSection";
 import SectionPartnership from "./Sections/SectionDownload.js";
 import Loader from 'components/Backdrop/Loader.js';
 import TextTransition, { presets } from "react-text-transition";
+import BackgroundSlider from "react-background-slider";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
 //scrollup
@@ -32,6 +33,7 @@ import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
 import Toolbar from '@material-ui/core/Toolbar';
+import MediaQuery from 'react-responsive'
 
 
 //responsive
@@ -85,8 +87,8 @@ ScrollTop.propTypes = {
 };
 
 export default function Components(props) {
-  const [open, setOpen] = React.useState(true);
-  const [index, setIndex] = React.useState(0);
+  const [open, setOpen] = useState(true);
+  const [index, setIndex] = useState(0);
   const biggerThan400 = useMediaPredicate("(min-width: 480px)");
   const smallerThan400 = useMediaPredicate("(max-width: 480px)");
   const classes = useStyles();
@@ -98,24 +100,25 @@ export default function Components(props) {
   "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_background-header.jpg?alt=media&token=f356647b-db18-45eb-855e-88ec438c0520",
   "https://firebasestorage.googleapis.com/v0/b/storageahmad-134a6.appspot.com/o/rsz_dsc_2730.jpg?alt=media&token=eec69b13-8564-49ee-bfaf-1feffac26383"
 ];
-  
-  React.useEffect(() => {
-    setTimeout(() => {
-        setOpen(false);
-    }, [1500])
-  }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     setInterval(() =>
       setIndex(index => index + 1),
-      4000
+      5000
     );
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false)
+    }, 1500)
+  }, [])
 
 
   return (
     <div>
       <Loader open={open} />
+      <MediaQuery minDeviceWidth={1224} device={{ deviceWidth: 1600 }}>
       <Header
         logo={require('assets/img/wiriosoedarmo.png')}
         brand="PM Wiriosoedarmo Gombong"
@@ -129,25 +132,30 @@ export default function Components(props) {
         {...rest}
       />
       <Toolbar id="back-to-top-anchor" />
-      <Parallax image={imgBackground[0]}>
+      <Parallax>
+      <BackgroundSlider
+        images={imgBackground}
+        duration={10} transition={2} />
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
-                <h1 className={classes.title}>
+                <h3 className={classes.title}>
                   <TextTransition
                     text={ HeaderText[index % HeaderText.length] }
-                    springConfig={ presets.gentle }
+                    springConfig={ presets.slow }
                     delay={2000}
+                    noOverflow={true}
                   />
-                </h1>
-                <h3 className={classes.subtitle}>
+                </h3>
+                <h5 className={classes.subtitle}>
                   <TextTransition
                       text={ SubHeaderText[index % SubHeaderText.length] }
-                      springConfig={ presets.gentle }
+                      springConfig={ presets.slow }
                       delay={3000}
+                      noOverflow={true}
                     />
-                </h3>
+                </h5>
                 <br />
                 <br />
                 <Link to={"/sejarah"} className={classes.link}>
@@ -283,6 +291,7 @@ export default function Components(props) {
         <SectionTestimoni />
       </div>
       <Footer />
+      </MediaQuery>
     </div>
   );
 }

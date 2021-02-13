@@ -47,6 +47,7 @@ const pillsStyle = {
   hr: {
     borderBottom: "1px solid #465161",
     width: "42px",
+    // paddingTop: 16,
     position: "absolute"
   }
 };

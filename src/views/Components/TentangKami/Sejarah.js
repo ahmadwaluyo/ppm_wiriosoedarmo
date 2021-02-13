@@ -47,6 +47,7 @@ export default function Sejarah() {
         <>
         <Loader open={open} />
         <BackgroundHeader data={'Sejarah'}/>
+        <br />
             <div className="content pb-5 mb-5">
                 <h1>HISTORY</h1>
                 <hr></hr>

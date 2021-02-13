@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 //loader
 import Loader from "components/Backdrop/Loader";
@@ -113,15 +113,12 @@ export default function Admission(props) {
     }, 2000)
   }, [])
 
-  const onError = (e) => {
-    console.log(e, "error in file-viewer");
-  }
 
-
-    return (
-        <>
+  return (
+      <Fragment>
         <Loader open={open} />
         <BackgroundHeader data={'STUDENT PERMISSION'}/>
+        <br />
         <div className={classes.titleSeparateAdmission}>
           <div className={classes.titleNewsAdmission}>
             Peraturan { '&' } Perijinan
@@ -268,6 +265,6 @@ export default function Admission(props) {
             </div>
           </div>
         <Footer />
-        </>
-    )
+      </Fragment>
+  )
 }

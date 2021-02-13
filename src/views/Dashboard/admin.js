@@ -14,7 +14,7 @@ import {
   IconButton,
   Container,
   Grid,
-  Paper,
+  // Paper,
   Link,
   MenuItem
 } from '@material-ui/core';
@@ -23,8 +23,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Wysiwyg from './wysiwyg';
-import GridItem from 'components/Grid/GridItem';
-import { Row, Col, Form } from "react-bootstrap";
+// import GridItem from 'components/Grid/GridItem';
+// import { Row, Col, Form } from "react-bootstrap";
 
 function Copyright() {
   return (
@@ -137,10 +137,10 @@ export default function Dashboard(props) {
   console.log(content, "<<<< data token")
   const classes = useStyles();
   const [open, setOpen] = useState(true);
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   const [openProfile, setOpenProfile] = useState(isTrue);
-  const [auth, setAuth] = useState(true);
-  const [state, setState] = useState({
+  const [auth] = useState(true);
+  const [state] = useState({
     id: content.id,
     profileName : content.fullname,
     username: content.username,
